@@ -24,3 +24,28 @@ console.log(strArray);
 // const string = 'Robin Singh';
 // const strArray = stringToArray(string);
 // console.log(strArray);
+
+//3.DNA to RNA Conversion
+//https://www.codewars.com/kata/5556282156230d0e5e000089/fork/javascript
+function DNAtoRNA(dna) {
+  const rna = dna.replace(/T/g, 'U');
+  return rna;
+}
+
+const dna = 'GATTCCACCGACTTCCCAAGTACCGGAAGCGCGACCAACTCGCACAGC';
+console.log(DNAtoRNA(dna));
+
+///T/ означає, що ми шукаємо символ "T", а флаг g (від "global") вказує,
+//що ми хочемо замінити всі входження "T" у всьому рядку.
+
+//---------------------version2----------------
+// function DNAtoRNA(dna) {
+//   for (let i = 0; i < dna.length; i++) {
+//     if (dna[i] === 'T') {
+//       dna = dna.replace('T', 'U');
+//     }
+//   }
+//   return dna.replace('T', 'U');
+// }
+// const dna = 'GATTCCACCGACTTCCCAAGTACCGGAAGCGCGACCAACTCGCACAGC';
+// console.log(DNAtoRNA(dna));
