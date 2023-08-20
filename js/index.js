@@ -148,3 +148,26 @@ console.log(century(2023));
 //   return Math.ceil(year / 100);
 // }
 //console.log(century(2023));
+
+//10.Make negative
+//  https://www.codewars.com/kata/5a3fe3dde1ce0e8ed6000097
+function makeNegative(num) {
+  return num === 0 ? 0 : -Math.abs(num); //Math.abs() - це вбудована функція в JavaScript,
+  // яка використовується для знаходження абсолютного(позитивного) значення числа.
+  //-Math.abs() - робить числа від"ємними, які були позитивними або нульовими
+}
+console.log(makeNegative(-9));
+
+//---------------------version2----------------
+// function makeNegative(num) {
+//   return num < 0 ? num : -num;
+// }
+// console.log(makeNegative(9));
+
+//---------------------version3----------------
+// function makeNegative(num) {
+//   if (num === 0) return 0;
+//   if (num < 0) return num;
+//   if (num > 0) return num * -1;
+// }
+// console.log(makeNegative(9));
