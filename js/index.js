@@ -34,7 +34,6 @@ function DNAtoRNA(dna) {
 
 const dna = 'GATTCCACCGACTTCCCAAGTACCGGAAGCGCGACCAACTCGCACAGC';
 console.log(DNAtoRNA(dna));
-
 ///T/ означає, що ми шукаємо символ "T", а флаг g (від "global") вказує,
 //що ми хочемо замінити всі входження "T" у всьому рядку.
 
@@ -49,3 +48,36 @@ console.log(DNAtoRNA(dna));
 // }
 // const dna = 'GATTCCACCGACTTCCCAAGTACCGGAAGCGCGACCAACTCGCACAGC';
 // console.log(DNAtoRNA(dna));
+
+//4.Find Maximum and Minimum Values of a List
+//https://www.codewars.com/kata/577a98a6ae28071780000989/train/javascript
+const min = function (list) {
+  return Math.min(...list);
+};
+const max = function (list) {
+  return Math.max(...list);
+};
+const lists = [-52, 56, 30, 29, -54, 0, -110];
+console.log(min(lists));
+console.log(max(lists));
+
+//---------------------version2----------------
+// const min = function(list){
+//     list.sort((a, b) => (a - b));
+//     return list[0];
+// }
+// const max = function (list) {
+//     list.sort((a, b) => (b - a));
+//     return list[0];
+// }
+// const list = [4, 6, 2, 1, 9, 63, -134, 566];
+// const minValue = min(list);
+// const maxValue = max(list);
+
+// console.log(maxValue);
+// console.log(minValue);
+
+
+
+
+
