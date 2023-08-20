@@ -108,7 +108,7 @@ console.log(warnTheSheep(queue));
 
 //6.Beginner - Lost Without a Map
 //www.codewars.com/kata/57f781872e3d8ca2a000007e/fork/javascript
-https: function maps(x) {
+function maps(x) {
   return x.map((num) => num * 2);
 }
 const x = [1, 2, 3];
@@ -137,3 +137,14 @@ console.log(doubleInteger(4));
 //   return i * 2;
 // }
 // console.log(doubleInteger(4));
+
+//9.Century From Year
+//  https://www.codewars.com/kata/5a3fe3dde1ce0e8ed6000097
+const century = (year) => Math.ceil(year / 100);
+console.log(century(2023));
+
+//---------------------version2----------------
+// function century(year) {
+//   return Math.ceil(year / 100);
+// }
+//console.log(century(2023));
