@@ -105,3 +105,24 @@ console.log(warnTheSheep(queue));
 
 // const queue = ['sheep', 'sheep', 'sheep', 'wolf', 'sheep'];
 // console.log(warnTheSheep(queue));
+
+//6.Beginner - Lost Without a Map
+//www.codewars.com/kata/57f781872e3d8ca2a000007e/fork/javascript
+https: function maps(x) {
+  return x.map((num) => num * 2);
+}
+const x = [1, 2, 3];
+console.log(maps(x));
+
+//7.Beginner - Lost Without a Map
+//https://www.codewars.com/kata/58f8a3a27a5c28d92e000144/fork/javascript
+function firstNonConsecutive(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] - arr[i - 1] !== 1 && arr[i] - arr[i - 1] !== -1) {
+      return arr[i];
+    }
+  }
+  return null;
+}
+const arr = [-1, -2, -3, -5];
+console.log(firstNonConsecutive(arr));
