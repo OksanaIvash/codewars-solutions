@@ -126,3 +126,14 @@ function firstNonConsecutive(arr) {
 }
 const arr = [-1, -2, -3, -5];
 console.log(firstNonConsecutive(arr));
+
+//8.Double integer
+// https://www.codewars.com/kata/53ee5429ba190077850011d4/train/javascript
+const doubleInteger = (i) => 2 * i;
+console.log(doubleInteger(4));
+
+//---------------------version2----------------
+// function doubleInteger(i) {
+//   return i * 2;
+// }
+// console.log(doubleInteger(4));
