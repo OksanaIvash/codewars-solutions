@@ -77,7 +77,31 @@ console.log(max(lists));
 // console.log(maxValue);
 // console.log(minValue);
 
+//5.A wolf in sheep's clothing (знайти вівцю в масиві біля вовка)
+//https://www.codewars.com/kata/a-wolf-in-sheeps-clothing/train/javascript
+function warnTheSheep(queue) {
+  queue.reverse();
+  const wolfIndex = queue.indexOf('wolf');
+  if (wolfIndex === 0) {
+    return 'Pls go away and stop eating my sheep';
+  } else {
+    return `Oi! Sheep number ${wolfIndex}! You are about to be eaten by a wolf!`;
+  }
+}
 
+const queue = ['wolf', 'sheep', 'sheep', 'sheep', 'sheep', 'sheep', 'sheep'];
+console.log(warnTheSheep(queue));
 
+//---------------------version2----------------
+// function warnTheSheep(queue) {
+//   const wolfIndex = queue.indexOf('wolf');
+//   if (wolfIndex === queue.length - 1) {
+//     return 'Pls go away and stop eating my sheep';
+//   } else {
+//     const sheepIndex = queue.length - wolfIndex - 1;
+//     return `Oi! Sheep number ${sheepIndex}! You are about to be eaten by a wolf!`;
+//   }
+// }
 
-
+// const queue = ['sheep', 'sheep', 'sheep', 'wolf', 'sheep'];
+// console.log(warnTheSheep(queue));
