@@ -174,6 +174,10 @@ console.log(makeNegative(-9));
 
 //11.Cockroach speed
 //https://www.codewars.com/kata/55fab1ffda3e2e44f00000c6/train/javascript
-
-const cockroachSpeed = (s) => Math.floor(s * 100000 / 3600);
+const cockroachSpeed = (s) => Math.floor((s * 100000) / 3600);
 console.log(cockroachSpeed(3.563821298829928));
+
+//12.Cangle of triangle
+// https://www.codewars.com/kata/5a023c426975981341000014/train/javascript
+const otherAngle = (a, b) => 180 - (a + b);
+console.log(otherAngle(10, 20));
