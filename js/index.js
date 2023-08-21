@@ -192,3 +192,23 @@ console.log(twiceAsOld(55, 30));
 //https://www.codewars.com/kata/5933a1f8552bc2750a0000ed/train/javascript
 const nthEven = (n) => n * 2 - 2;
 console.log(nthEven(1298734));
+
+//15.What's the real floor
+//https://www.codewars.com/kata/574b3b1599d8f897470018f6/train/javascript
+function getRealFloor(n) {
+  if (n < 0) return n;
+  if (n === 0 || n === 1) return 0;
+  if (n <= 13) {
+    return n - 1;
+  } else {
+    return n - 2;
+  }
+}
+console.log(getRealFloor(15));
+
+//---------------------version2----------------
+// const getRealFloor = (n) => {
+//   if (n >= 13) return n - 2;
+//   if (n > 0) return n - 1;
+//   return n;
+// };
