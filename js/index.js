@@ -181,3 +181,9 @@ console.log(cockroachSpeed(3.563821298829928));
 // https://www.codewars.com/kata/5a023c426975981341000014/train/javascript
 const otherAngle = (a, b) => 180 - (a + b);
 console.log(otherAngle(10, 20));
+
+//13.Twice as old
+//https://www.codewars.com/kata/5b853229cfde412a470000d0/train/javascript
+const twiceAsOld = (dadYearsOld, sonYearsOld) =>
+  Math.abs(dadYearsOld - sonYearsOld * 2);
+console.log(twiceAsOld(55, 30));
