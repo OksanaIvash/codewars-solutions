@@ -28,9 +28,14 @@ console.log(strArray);
 //3.DNA to RNA Conversion
 //https://www.codewars.com/kata/5556282156230d0e5e000089/fork/javascript
 function DNAtoRNA(dna) {
-  const rna = dna.replace(/T/g, 'U');
+  const rna = dna.replaceAll('T', 'U'); //replaceAll появився минулого року
   return rna;
 }
+
+// function DNAtoRNA(dna) {
+//   const rna = dna.replace(/T/g, 'U');//краще використовувати replaceAll
+//   return rna;
+// }
 
 const dna = 'GATTCCACCGACTTCCCAAGTACCGGAAGCGCGACCAACTCGCACAGC';
 console.log(DNAtoRNA(dna));
@@ -217,3 +222,21 @@ console.log(getRealFloor(15));
 //https://www.codewars.com/kata/55f9bca8ecaa9eac7100004a/train/javascript
 const past = (h, m, s) => (h * 3600 + m * 60 + s) * 1000;
 console.log(past(1, 0, 1));
+
+//17.Is n divisible by x and y
+//https://www.codewars.com/kata/5545f109004975ea66000086/train/javascript
+function isDivisible(n, x, y) {
+  return n % x === 0 && n % y === 0;
+}
+console.log(isDivisible(3, 3, 4));
+
+//18.Find the smallest integer in the array
+//https://www.codewars.com/kata/find-the-smallest-integer-in-the-array/train/javascript
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    return Math.min(...args);
+  }
+}
+
+const d = new SmallestIntegerFinder();
+console.log(d.findSmallestInt([78, 56, 232, 12, 18]));
