@@ -275,3 +275,20 @@ console.log(nameInStr('Across the rivers', 'Chris'));
 
 const ArrowFunc = (arr) => String.fromCharCode(...arr);
 console.log(ArrowFunc([70, 85, 83, 32, 82, 79, 72, 32, 68, 65, 72]));
+
+//21. Row Weights
+//https://www.codewars.com/kata/5abd66a5ccfd1130b30000a9/javascript
+function rowWeights(array) {
+  let weightTeam1 = 0;
+  let weightTeam2 = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    if (i % 2 === 0) {
+      weightTeam1 += array[i];
+    } else {
+      weightTeam2 += array[i];
+    }
+  }
+  return [weightTeam1, weightTeam2];
+}
+console.log(rowWeights([80]));
