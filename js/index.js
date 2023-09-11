@@ -269,3 +269,9 @@ function nameInStr(str, name) {
   return false;
 }
 console.log(nameInStr('Across the rivers', 'Chris'));
+
+//20. Take an Arrow to the knee, Functionally
+//https://www.codewars.com/kata/559f3123e66a7204f000009f/train/javascript
+
+const ArrowFunc = (arr) => String.fromCharCode(...arr);
+console.log(ArrowFunc([70, 85, 83, 32, 82, 79, 72, 32, 68, 65, 72]));
