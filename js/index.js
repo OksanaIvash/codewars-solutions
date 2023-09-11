@@ -240,3 +240,32 @@ class SmallestIntegerFinder {
 
 const d = new SmallestIntegerFinder();
 console.log(d.findSmallestInt([78, 56, 232, 12, 18]));
+
+// function giveMeFive(obj) {
+//   const arr = [];
+//   for (let key in obj) {
+//     if (key.length === 5) {
+//       arr.push(key);
+//     }
+
+//     const value = obj[key];
+//     if (value.length === 5) {
+//       arr.push(value);
+//     }
+//   }
+//   return arr;
+// }
+
+//19. What's in a name?
+//https://www.codewars.com/kata/59daf400beec9780a9000045/train/javascript
+function nameInStr(str, name) {
+  const lowerStr = str.toLowerCase();
+  const lowerName = name.toLowerCase();
+  let j = 0;
+  for (let i = 0; i <= lowerStr.length; i++) {
+    if (j === lowerName.length) return true;
+    if (lowerStr[i] === lowerName[j]) j++;
+  }
+  return false;
+}
+console.log(nameInStr('Across the rivers', 'Chris'));
