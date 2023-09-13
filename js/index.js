@@ -292,3 +292,22 @@ function rowWeights(array) {
   return [weightTeam1, weightTeam2];
 }
 console.log(rowWeights([80]));
+
+//22.Isograms
+//https://www.codewars.com/kata/54ba84be607a92aa900000f1/train/javascript
+
+function isIsogram(str) {
+  let newStr = '';
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i].toLowerCase();
+    if (newStr.includes(char)) return false;
+    newStr += char;
+  }
+  return true;
+}
+console.log(isIsogram('Dermatoglyphics'));
+
+//---------------------version2----------------
+// function isIsogram(str) {
+//   return new Set(str.toLowerCase()).size === str.length;   //https://www.w3schools.com/js/js_object_sets.asp
+// }
