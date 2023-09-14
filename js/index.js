@@ -326,3 +326,19 @@ function getMiddle(s) {
     ? s.substr(s.length / 2 - 1, 2)
     : s.substr((s.length - 1) / 2, 1);
 }
+
+//25. Character Concatenation
+//https://www.codewars.com/kata/55147ff29cd40b43c600058b/train/javascript
+
+function charConcat(string) {
+  let counter = 1;
+  let newString = '';
+  while (string.length > 1) {
+    newString += string.charAt(0) + string.charAt(string.length - 1) + counter;
+    counter++;
+    string = string.slice(1, -1);
+  }
+  return newString;
+}
+
+console.log(charConcat('abc def'));
