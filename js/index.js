@@ -311,3 +311,9 @@ console.log(isIsogram('Dermatoglyphics'));
 // function isIsogram(str) {
 //   return new Set(str.toLowerCase()).size === str.length;   //https://www.w3schools.com/js/js_object_sets.asp
 // }
+
+//23. Convert an array of strings to array of numbers
+//https://www.codewars.com/kata/5783d8f3202c0e486c001d23/javascript
+
+const toNumberArray = (stringarray) => stringarray.map((num) => Number(num));
+console.log(toNumberArray(['1.1', '2.2', '3.3']));
