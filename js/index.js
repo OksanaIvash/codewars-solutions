@@ -377,3 +377,23 @@ function solve(s) {
   return result;
 }
 console.log(solve('vih61w8oohj5'));
+
+//29. Sum of odd numbers(трикутник з непарних чисел)
+//https://www.codewars.com/kata/55fd2d567d94ac3bc9000064/javascript
+
+const rowSumOddNumbers = (n) => Math.pow(n, 3); //const rowSumOddNumbers = (n) => n ** 3; - ** представляє піднесення числа
+                                                //до заданого ступеня(потужність).Це відносно новий оператор,
+                                                // і він був доданий до стандарту ECMAScript 2016(ES7).
+//---------------------version2----------------
+// function rowSumOddNumbers(n) {
+//   // Calculate the first number in the nth row
+//   const firstNumber = 1 + 2 * (n - 1) * n / 2;
+
+//   // Calculate the sum of n consecutive odd numbers starting from the firstNumber
+//   let sum = 0;
+//   for (let i = 0; i < n; i++) {
+//     sum += firstNumber + 2 * i;
+//   }
+//   return sum;
+// }
+// console.log(rowSumOddNumbers(5)); 
