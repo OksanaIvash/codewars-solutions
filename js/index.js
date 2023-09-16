@@ -342,3 +342,22 @@ function charConcat(string) {
 }
 
 console.log(charConcat('abc def'));
+
+//25. ATM
+//https://www.codewars.com/kata/5635e7cb49adc7b54500001c/train/javascript
+
+function solve(n) {
+  const nominal = [500, 200, 100, 50, 20, 10];
+  let count = 0;
+
+  for (let i = 0; i < nominal.length; i++) {
+    while (n >= nominal[i]) {
+      n -= nominal[i];
+      count++;
+    }
+  }
+
+  return n === 0 ? count : -1;
+}
+
+console.log(solve(666));
