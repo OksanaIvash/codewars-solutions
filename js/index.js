@@ -367,3 +367,13 @@ console.log(solve(666));
 
 const repeatStr = (n, s) => s.repeat(n);
 console.log(repeatStr(2, 'ha '));
+
+//28. Numbers in strings
+//https://www.codewars.com/kata/59dd2c38f703c4ae5e000014/javascript
+
+function solve(s) {
+  const numberMatches = s.match(/\d+/g); // Витягує всі послідовності цифр та зберігає їх у масиві
+  const result = Math.max(...numberMatches.map((num) => parseInt(num)));
+  return result;
+}
+console.log(solve('vih61w8oohj5'));
