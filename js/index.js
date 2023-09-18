@@ -398,7 +398,7 @@ const rowSumOddNumbers = (n) => Math.pow(n, 3); //const rowSumOddNumbers = (n) =
 // }
 // console.log(rowSumOddNumbers(5));
 
-//30.Friend or Foe?
+//30.
 //https://www.codewars.com/kata/55b42574ff091733d900002f/train/javascript
 function friend(friends) {
   let newFriends = [];
@@ -409,10 +409,32 @@ function friend(friends) {
   }
   return newFriends;
 }
-console.log(friend(['Love', 'Your', 'Face', '1']));//['Love', 'Your', 'Face'];
+console.log(friend(['Love', 'Your', 'Face', '1'])); //['Love', 'Your', 'Face'];
 
 //---------------------version2----------------
 // function friend(friends) {
 //   return friends.filter((name) => name.length === 4);
 // }
 // console.log(friend(['Love', 'Your', 'Face', '1']));
+
+//31. Two to One
+//https://www.codewars.com/kata/5656b6906de340bd1b0000ac/javascript
+
+function longest(s1, s2) {
+  // Об'єднуємо обидва рядки і перетворюємо їх в масив символів
+  const combined = (s1 + s2).split('');
+
+  // Використовуємо Set для автоматичного видалення дублікатів і перетворення на масив неповторюючихся символів
+  const uniqueChars = [...new Set(combined)];
+
+  // Сортуємо масив унікальних символів в алфавітному порядку
+  const sortedUniqueChars = uniqueChars.sort();
+
+  // З'єднуємо відсортовані символи в один рядок і повертаємо результат
+  return sortedUniqueChars.join('');
+}
+console.log(longest('inmanylanguages', 'theresapairoffunctions'));
+
+//---------------------version2----------------
+// const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('');
+// console.log (longest("inmanylanguages", "theresapairoffunctions"));
