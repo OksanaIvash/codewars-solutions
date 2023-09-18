@@ -371,19 +371,19 @@ console.log(repeatStr(2, 'ha '));
 //28. Numbers in strings
 //https://www.codewars.com/kata/59dd2c38f703c4ae5e000014/javascript
 
-function solve(s) {
+function solveNum(s) {
   const numberMatches = s.match(/\d+/g); // Витягує всі послідовності цифр та зберігає їх у масиві
   const result = Math.max(...numberMatches.map((num) => parseInt(num)));
   return result;
 }
-console.log(solve('vih61w8oohj5'));
+console.log(solveNum('vih61w8oohj5'));
 
 //29. Sum of odd numbers(трикутник з непарних чисел)
 //https://www.codewars.com/kata/55fd2d567d94ac3bc9000064/javascript
 
 const rowSumOddNumbers = (n) => Math.pow(n, 3); //const rowSumOddNumbers = (n) => n ** 3; - ** представляє піднесення числа
-                                                //до заданого ступеня(потужність).Це відносно новий оператор,
-                                                // і він був доданий до стандарту ECMAScript 2016(ES7).
+//до заданого ступеня(потужність).Це відносно новий оператор,
+// і він був доданий до стандарту ECMAScript 2016(ES7).
 //---------------------version2----------------
 // function rowSumOddNumbers(n) {
 //   // Calculate the first number in the nth row
@@ -396,4 +396,23 @@ const rowSumOddNumbers = (n) => Math.pow(n, 3); //const rowSumOddNumbers = (n) =
 //   }
 //   return sum;
 // }
-// console.log(rowSumOddNumbers(5)); 
+// console.log(rowSumOddNumbers(5));
+
+//30.Friend or Foe?
+//https://www.codewars.com/kata/55b42574ff091733d900002f/train/javascript
+function friend(friends) {
+  let newFriends = [];
+  for (friend of friends) {
+    if (friend.length === 4) {
+      newFriends.push(friend);
+    }
+  }
+  return newFriends;
+}
+console.log(friend(['Love', 'Your', 'Face', '1']));//['Love', 'Your', 'Face'];
+
+//---------------------version2----------------
+// function friend(friends) {
+//   return friends.filter((name) => name.length === 4);
+// }
+// console.log(friend(['Love', 'Your', 'Face', '1']));
