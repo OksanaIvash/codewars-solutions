@@ -438,3 +438,9 @@ console.log(longest('inmanylanguages', 'theresapairoffunctions'));
 //---------------------version2----------------
 // const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('');
 // console.log (longest("inmanylanguages", "theresapairoffunctions"));
+
+//32. String ends with?
+//https://www.codewars.com/kata/51f2d1cafc9c0f745c00037d/javascript
+
+const solution = (str, ending) => str.endsWith(ending);
+console.log(solution('abcde', 'cde'));
