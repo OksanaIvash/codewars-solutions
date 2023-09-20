@@ -444,3 +444,17 @@ console.log(longest('inmanylanguages', 'theresapairoffunctions'));
 
 const solution = (str, ending) => str.endsWith(ending);
 console.log(solution('abcde', 'cde'));
+
+//33.I love big nums and I cannot lie
+//https://www.codewars.com/kata/56121f3312baa28c8500005b/train/javascript
+
+const biggest = (nums) =>
+  nums
+    .map(String) //Конвертуємо всі числа в рядки, щоб порівнювати їх як рядки
+    //Визначаємо порядок сортування, в якому спочатку порівнюються два числа
+    .sort((a, b) => (b + a).localeCompare(a + b))//Сортувати у зворотному порядку
+    .join('') //Об'єднуємо відсортовані рядки в один рядок
+    .replace(/^0+/, '0');//Відсікаємо можливі нулі в початку результату
+
+console.log(biggest([3, 30, 34, 5, 9]));//9534330
+console.log(biggest([0, 0, 0, 0]));//0
