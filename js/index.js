@@ -452,9 +452,19 @@ const biggest = (nums) =>
   nums
     .map(String) //Конвертуємо всі числа в рядки, щоб порівнювати їх як рядки
     //Визначаємо порядок сортування, в якому спочатку порівнюються два числа
-    .sort((a, b) => (b + a).localeCompare(a + b))//Сортувати у зворотному порядку
+    .sort((a, b) => (b + a).localeCompare(a + b)) //Сортувати у зворотному порядку
     .join('') //Об'єднуємо відсортовані рядки в один рядок
-    .replace(/^0+/, '0');//Відсікаємо можливі нулі в початку результату
+    .replace(/^0+/, '0'); //Відсікаємо можливі нулі в початку результату
 
-console.log(biggest([3, 30, 34, 5, 9]));//9534330
-console.log(biggest([0, 0, 0, 0]));//0
+console.log(biggest([3, 30, 34, 5, 9])); //9534330
+console.log(biggest([0, 0, 0, 0])); //0
+
+//34.Every archer has its arrows
+//https://www.codewars.com/kata/559f89598c0d6c9b31000125/javascript
+
+function archersReady(archers) {
+  if (archers.length === 0) return false;
+  return archers.every((num) => num >= 5);
+}
+
+console.log(archersReady([5, 6, 7, 8])); //true
