@@ -433,7 +433,7 @@ function longest(s1, s2) {
   // З'єднуємо відсортовані символи в один рядок і повертаємо результат
   return sortedUniqueChars.join('');
 }
-console.log(longest('inmanylanguages', 'theresapairoffunctions'));
+console.log(longest('inmanylanguages', 'theresapairoffunctions'));//acefghilmnoprstuy
 
 //---------------------version2----------------
 // const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('');
@@ -443,7 +443,7 @@ console.log(longest('inmanylanguages', 'theresapairoffunctions'));
 //https://www.codewars.com/kata/51f2d1cafc9c0f745c00037d/javascript
 
 const solution = (str, ending) => str.endsWith(ending);
-console.log(solution('abcde', 'cde'));
+console.log(solution('abcde', 'cde'));//true
 
 //33.I love big nums and I cannot lie
 //https://www.codewars.com/kata/56121f3312baa28c8500005b/train/javascript
@@ -468,3 +468,26 @@ function archersReady(archers) {
 }
 
 console.log(archersReady([5, 6, 7, 8])); //true
+
+//35.Delete occurrences of an element if it occurs more than n times
+//https://www.codewars.com/kata/554ca54ffa7d91b236000023/train/javascript
+
+function deleteNth(arr, n) {
+  const count = {}; // Об'єкт для відстеження кількості входжень кожного числа
+  const newArr = []; // Новий масив без дублікатів
+
+  for (let i = 0; i < arr.length; i++) {
+    const num = arr[i];
+
+    // Перевіряємо, скільки разів зустрілось дане число !!!!
+    count[num] = (count[num] || 0) + 1;
+
+    // Додаємо число до нового масиву, якщо його кількість не перевищує n
+    if (count[num] <= n) {
+      newArr.push(num);
+    }
+  }
+  return newArr;
+}
+
+console.log(deleteNth([1, 1, 3, 3, 7, 2, 2, 2, 2], 3)); //[1, 1, 3, 3, 7, 2, 2, 2]
