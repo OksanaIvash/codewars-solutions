@@ -433,7 +433,7 @@ function longest(s1, s2) {
   // З'єднуємо відсортовані символи в один рядок і повертаємо результат
   return sortedUniqueChars.join('');
 }
-console.log(longest('inmanylanguages', 'theresapairoffunctions'));//acefghilmnoprstuy
+console.log(longest('inmanylanguages', 'theresapairoffunctions')); //acefghilmnoprstuy
 
 //---------------------version2----------------
 // const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('');
@@ -443,7 +443,7 @@ console.log(longest('inmanylanguages', 'theresapairoffunctions'));//acefghilmnop
 //https://www.codewars.com/kata/51f2d1cafc9c0f745c00037d/javascript
 
 const solution = (str, ending) => str.endsWith(ending);
-console.log(solution('abcde', 'cde'));//true
+console.log(solution('abcde', 'cde')); //true
 
 //33.I love big nums and I cannot lie
 //https://www.codewars.com/kata/56121f3312baa28c8500005b/train/javascript
@@ -491,3 +491,28 @@ function deleteNth(arr, n) {
 }
 
 console.log(deleteNth([1, 1, 3, 3, 7, 2, 2, 2, 2], 3)); //[1, 1, 3, 3, 7, 2, 2, 2]
+
+//36.Longest vowel chain
+//https://www.codewars.com/kata/59c5f4e9d751df43cf000035/train/javascript
+
+function findLongestVowelSequence(s) {
+  // Перевірка на порожній рядок або null
+  if (!s) {
+    return 0;
+  }
+
+  // Розділити рядок на послідовності приголосних
+  const vowelSequences = s.split(/[^aeiou]+/g);
+
+  // Знайти найбільшу довжину послідовності
+  const maxLength = vowelSequences.reduce(
+    (max, str) => Math.max(max, str.length),
+    0
+  );
+
+  return maxLength;
+}
+
+console.log(findLongestVowelSequence('iiihoovaeaaaoougjyaw')); // 8
+console.log(findLongestVowelSequence('')); // 0
+console.log(findLongestVowelSequence(null)); // 0
