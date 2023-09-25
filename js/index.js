@@ -180,23 +180,23 @@ console.log(makeNegative(-9));
 //11.Cockroach speed
 //https://www.codewars.com/kata/55fab1ffda3e2e44f00000c6/train/javascript
 const cockroachSpeed = (s) => Math.floor((s * 100000) / 3600);
-console.log(cockroachSpeed(3.563821298829928));
+console.log(cockroachSpeed(3.563821298829928)); //98
 
 //12.Cangle of triangle
 // https://www.codewars.com/kata/5a023c426975981341000014/train/javascript
 const otherAngle = (a, b) => 180 - (a + b);
-console.log(otherAngle(10, 20));
+console.log(otherAngle(10, 20)); //150
 
 //13.Twice as old
 //https://www.codewars.com/kata/5b853229cfde412a470000d0/train/javascript
 const twiceAsOld = (dadYearsOld, sonYearsOld) =>
   Math.abs(dadYearsOld - sonYearsOld * 2);
-console.log(twiceAsOld(55, 30));
+console.log(twiceAsOld(55, 30)); //5
 
 //14.Return n-th even number
 //https://www.codewars.com/kata/5933a1f8552bc2750a0000ed/train/javascript
 const nthEven = (n) => n * 2 - 2;
-console.log(nthEven(1298734));
+console.log(nthEven(1298734)); //2597466
 
 //15.What's the real floor
 //https://www.codewars.com/kata/574b3b1599d8f897470018f6/train/javascript
@@ -209,7 +209,7 @@ function getRealFloor(n) {
     return n - 2;
   }
 }
-console.log(getRealFloor(15));
+console.log(getRealFloor(15)); //13
 
 //---------------------version2----------------
 // const getRealFloor = (n) => {
@@ -221,14 +221,14 @@ console.log(getRealFloor(15));
 //16.Clock
 //https://www.codewars.com/kata/55f9bca8ecaa9eac7100004a/train/javascript
 const past = (h, m, s) => (h * 3600 + m * 60 + s) * 1000;
-console.log(past(1, 0, 1));
+console.log(past(1, 0, 1)); //3601000
 
 //17.Is n divisible by x and y
 //https://www.codewars.com/kata/5545f109004975ea66000086/train/javascript
 function isDivisible(n, x, y) {
   return n % x === 0 && n % y === 0;
 }
-console.log(isDivisible(3, 3, 4));
+console.log(isDivisible(3, 3, 4)); //false
 
 //18.Find the smallest integer in the array
 //https://www.codewars.com/kata/find-the-smallest-integer-in-the-array/train/javascript
@@ -239,7 +239,7 @@ class SmallestIntegerFinder {
 }
 
 const d = new SmallestIntegerFinder();
-console.log(d.findSmallestInt([78, 56, 232, 12, 18]));
+console.log(d.findSmallestInt([78, 56, 232, 12, 18])); //12
 
 // function giveMeFive(obj) {
 //   const arr = [];
@@ -268,13 +268,13 @@ function nameInStr(str, name) {
   }
   return false;
 }
-console.log(nameInStr('Across the rivers', 'Chris'));
+console.log(nameInStr('Across the rivers', 'Chris')); //true
 
 //20. Take an Arrow to the knee, Functionally
 //https://www.codewars.com/kata/559f3123e66a7204f000009f/train/javascript
 
 const ArrowFunc = (arr) => String.fromCharCode(...arr);
-console.log(ArrowFunc([70, 85, 83, 32, 82, 79, 72, 32, 68, 65, 72]));
+console.log(ArrowFunc([70, 85, 83, 32, 82, 79, 72, 32, 68, 65, 72])); //FUS ROH DAH
 
 //21. Row Weights
 //https://www.codewars.com/kata/5abd66a5ccfd1130b30000a9/javascript
@@ -291,7 +291,7 @@ function rowWeights(array) {
   }
   return [weightTeam1, weightTeam2];
 }
-console.log(rowWeights([80]));
+console.log(rowWeights([80])); //[80, 0]
 
 //22.Isograms
 //https://www.codewars.com/kata/54ba84be607a92aa900000f1/train/javascript
@@ -305,7 +305,7 @@ function isIsogram(str) {
   }
   return true;
 }
-console.log(isIsogram('Dermatoglyphics'));
+console.log(isIsogram('Dermatoglyphics')); //true
 
 //---------------------version2----------------
 // function isIsogram(str) {
@@ -316,7 +316,7 @@ console.log(isIsogram('Dermatoglyphics'));
 //https://www.codewars.com/kata/5783d8f3202c0e486c001d23/javascript
 
 const toNumberArray = (stringarray) => stringarray.map((num) => Number(num));
-console.log(toNumberArray(['1.1', '2.2', '3.3']));
+console.log(toNumberArray(['1.1', '2.2', '3.3'])); // [1.1, 2.2, 3.3]
 
 //24. Get the Middle Character
 //https://www.codewars.com/kata/56747fd5cb988479af000028/javascript
@@ -326,6 +326,8 @@ function getMiddle(s) {
     ? s.substr(s.length / 2 - 1, 2)
     : s.substr((s.length - 1) / 2, 1);
 }
+
+console.log(getMiddle('test')); //es
 
 //25. Character Concatenation
 //https://www.codewars.com/kata/55147ff29cd40b43c600058b/train/javascript
@@ -341,7 +343,7 @@ function charConcat(string) {
   return newString;
 }
 
-console.log(charConcat('abc def'));
+console.log(charConcat('abc def')); //af1be2cd3
 
 //25. ATM
 //https://www.codewars.com/kata/5635e7cb49adc7b54500001c/train/javascript
@@ -360,13 +362,13 @@ function solve(n) {
   return n === 0 ? count : -1;
 }
 
-console.log(solve(666));
+console.log(solve(666)); //-1
 
 //27. String repeat
 //https://www.codewars.com/kata/57a0e5c372292dd76d000d7e/train/javascript
 
 const repeatStr = (n, s) => s.repeat(n);
-console.log(repeatStr(2, 'ha '));
+console.log(repeatStr(2, 'ha ')); //ha ha
 
 //28. Numbers in strings
 //https://www.codewars.com/kata/59dd2c38f703c4ae5e000014/javascript
@@ -376,7 +378,7 @@ function solveNum(s) {
   const result = Math.max(...numberMatches.map((num) => parseInt(num)));
   return result;
 }
-console.log(solveNum('vih61w8oohj5'));
+console.log(solveNum('vih61w8oohj5')); //61
 
 //29. Sum of odd numbers(трикутник з непарних чисел)
 //https://www.codewars.com/kata/55fd2d567d94ac3bc9000064/javascript
@@ -521,34 +523,13 @@ console.log(findLongestVowelSequence(null)); // 0
 //https://www.codewars.com/kata/59da47fa27ee00a8b90000b4/train/javascript
 
 function generateOddNumbers(s) {
-  let count = 0;
-
+  let counter = 0;
   for (let i = 0; i < s.length; i++) {
-    for (let j = i + 1; j <= s.length; j++) {
-      const substring = s.substring(i, j);
-      const number = parseInt(substring, 10);
-
-      if (number % 2 !== 0) {
-        count++;
-      }
+    if (Number(s[i]) % 2 === 1) {
+      counter += i + 1;
     }
   }
-  return count;
+  return counter;
 }
-console.log(generateOddNumbers('1341'));
 
-//---------------------version2----------------
-// function generateOddNumbers(s){
-//   // initialize counter
-//   let counter = 0;
-//   // iterate over string characters
-//   for (let idx = 0; idx < s.length; idx++) {
-//     // if number is odd, increment counter by the value of its index + 1 (explanation below)
-//     if (Number(s[idx]) % 2 === 1) {
-//       counter += idx + 1;
-//     }
-//   }
-//   return counter;
-// };
-
-// console.log(generateOddNumbers('13472315'));//28
+console.log(generateOddNumbers('13472315')); //28
