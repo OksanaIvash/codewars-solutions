@@ -516,3 +516,39 @@ function findLongestVowelSequence(s) {
 console.log(findLongestVowelSequence('iiihoovaeaaaoougjyaw')); // 8
 console.log(findLongestVowelSequence('')); // 0
 console.log(findLongestVowelSequence(null)); // 0
+
+//37.Non-even substrings
+//https://www.codewars.com/kata/59da47fa27ee00a8b90000b4/train/javascript
+
+function generateOddNumbers(s) {
+  let count = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    for (let j = i + 1; j <= s.length; j++) {
+      const substring = s.substring(i, j);
+      const number = parseInt(substring, 10);
+
+      if (number % 2 !== 0) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+console.log(generateOddNumbers('1341'));
+
+//---------------------version2----------------
+// function generateOddNumbers(s){
+//   // initialize counter
+//   let counter = 0;
+//   // iterate over string characters
+//   for (let idx = 0; idx < s.length; idx++) {
+//     // if number is odd, increment counter by the value of its index + 1 (explanation below)
+//     if (Number(s[idx]) % 2 === 1) {
+//       counter += idx + 1;
+//     }
+//   }
+//   return counter;
+// };
+
+// console.log(generateOddNumbers('13472315'));//28
