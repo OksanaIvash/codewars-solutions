@@ -574,3 +574,39 @@ console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5]));
 //Цей спосіб працює і має лінійну складність (O(n)), що робить його дуже ефективним.
 // console.log(findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1])); //4
 // console.log(findOdd([20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5])); //5
+
+//39.Coding Meetup #15 - Higher-Order Functions Series - Find the odd names
+//https://www.codewars.com/kata/583a8bde28019d615a000035/train/javascript
+function findPersonWithOddName(list) {
+  const oddNamePeople = list.filter((person) => {
+    const elements = [...person.firstName].map((char) => char.charCodeAt(0));
+    const sum = elements.reduce(
+      (accumulator, current) => accumulator + current,
+      0
+    );
+    return sum % 2 !== 0;
+  });
+
+  return oddNamePeople || []; // Повертаємо порожній масив, якщо немає співпадінь
+}
+
+const list1 = [
+  {
+    firstName: 'Aba',
+    lastName: 'N.',
+    country: 'Ghana',
+    continent: 'Africa',
+    age: 21,
+    language: 'Python',
+  },
+  {
+    firstName: 'Abb',
+    lastName: 'O.',
+    country: 'Israel',
+    continent: 'Asia',
+    age: 39,
+    language: 'Java',
+  },
+];
+
+console.log(findPersonWithOddName(list1)); // [{ firstName: 'Aba', lastName: 'N.', country: 'Ghana', continent: 'Africa', age: 21, language: 'Python' }]
