@@ -610,3 +610,50 @@ const list1 = [
 ];
 
 console.log(findPersonWithOddName(list1)); // [{ firstName: 'Aba', lastName: 'N.', country: 'Ghana', continent: 'Africa', age: 21, language: 'Python' }]
+
+//40.Coding Meetup #1 - Higher-Order Functions Series - Count the number of JavaScript developers coming from Europe
+//https://www.codewars.com/kata/582746fa14b3892727000c4f/javascript
+
+const countDevelopersInEurope = (list) =>
+  list
+    .map(
+      (person) =>
+        person.continent === 'Europe' && person.language === 'JavaScript'
+    )
+    .reduce((count, isEuropean) => count + isEuropean, 0);
+const list2 = [
+  {
+    firstName: 'Noah',
+    lastName: 'M.',
+    country: 'Switzerland',
+    continent: 'Europe',
+    age: 19,
+    language: 'JavaScript',
+  },
+  {
+    firstName: 'Maia',
+    lastName: 'S.',
+    country: 'Tahiti',
+    continent: 'Oceania',
+    age: 28,
+    language: 'JavaScript',
+  },
+  {
+    firstName: 'Shufen',
+    lastName: 'L.',
+    country: 'Taiwan',
+    continent: 'Asia',
+    age: 35,
+    language: 'HTML',
+  },
+  {
+    firstName: 'Sumayah',
+    lastName: 'M.',
+    country: 'Tajikistan',
+    continent: 'Asia',
+    age: 30,
+    language: 'CSS',
+  },
+];
+
+console.log(countDevelopersInEurope(list2)); //1
