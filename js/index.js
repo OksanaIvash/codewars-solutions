@@ -657,3 +657,34 @@ const list2 = [
 ];
 
 console.log(countDevelopersInEurope(list2)); //1
+
+//41. Higher-Order Functions Series - Greet developers (Доробити!!!)
+//https://www.codewars.com/kata/58279e13c983ca4a2a00002a/train/javascript
+
+const greetDevelopers = (list) => list.map((person) => {
+  // Створюємо копію об'єкта, щоб зберегти початковий об'єкт без змін.
+  const personCopy = { ...person };
+  
+  // Додаємо властивість 'greeting'.
+  personCopy.greeting = `Hi ${person.firstName}, what do you like the most about ${person.language}`;
+  
+  return personCopy;
+});
+
+const list3 = [
+      {
+        firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java',
+      },
+      {
+        firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: 'Python',
+      },
+      {
+        firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby',
+      },
+    ];
+
+
+console.log(greetDevelopers(list3));
+//[  { firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java', greeting: 'Hi Sofia, what do you like the most about Java?'},
+//{ firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: 'Python', greeting: 'Hi Lukas, what do you like the most about Python?' },
+//{ firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby', greeting: 'Hi Madison, what do you like the most about Ruby?' } ];
