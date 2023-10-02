@@ -783,3 +783,46 @@ const list5 = [
   },
 ];
 console.log(getFirstPython(list5)); //Victoria, Puerto Rico
+
+//44. Coding Meetup #5 - Higher-Order Functions Series - Prepare the count of languages
+//https://www.codewars.com/kata/5828713ed04efde70e000346/javascript
+
+function countLanguages(list) {
+  const objLanguages = {};
+  for (const dev of list) {
+    const value = dev.language; // Отримуємо мову поточного об'єкта
+    if (objLanguages[value] === undefined) {
+      objLanguages[value] = 1;
+    } else {
+      objLanguages[value]++;
+    }
+  }
+  return objLanguages;
+}
+
+var list6 = [
+  { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C' },
+  { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript' },
+  { firstName: 'Ramon', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby' },
+  { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C' },
+];;
+console.log(countLanguages(list6));//{ C: 2, JavaScript: 1, Ruby: 1 }
+ 
+//---------------------version2----------------
+//Замість об'єкта для зберігання кількості розробників для кожної мови програмування,
+//ми можемо використовувати Map, що забезпечить більшу гнучкість!!!
+// і підтримку для будь - яких ключів(не лише рядків)!!!!
+
+// function countLanguages(list) {
+//   const languageMap = new Map(); //ств-мо колекцію Map;
+
+//Map в JavaScript - це колекція, що дозволяє зберігати ключ - значення
+//та надає більшу гнучкість для зберігання та операцій над даними, порівняно з об'єктом (Object).
+
+//   for (const dev of list) {
+//     const language = dev.language;
+//     const count = languageMap.get(language) || 0;
+//     languageMap.set(language, count + 1);
+//   }
+//   return Object.fromEntries(languageMap); //перетворення об'єкта типу Map (в даному випадку languageMap) на об'єкт типу Object;
+// }
