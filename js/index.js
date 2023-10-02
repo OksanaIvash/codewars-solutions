@@ -744,4 +744,42 @@ const list4 = [
     language: 'Ruby',
   },
 ];
-console.log(isRubyComing(list4));
+console.log(isRubyComing(list4)); //true
+
+//43. Coding Meetup #4 - Higher-Order Functions Series - Find the first Python developer
+//https://www.codewars.com/kata/5827bc50f524dd029d0005f2/javascript
+
+const getFirstPython = (list) => {
+  const developer = list.find((dev) => dev.language === 'Python');
+  return developer
+    ? `${developer.firstName}, ${developer.country}`
+    : 'There will be no Python developers';
+};
+
+const list5 = [
+  {
+    firstName: 'Mark',
+    lastName: 'G.',
+    country: 'Scotland',
+    continent: 'Europe',
+    age: 22,
+    language: 'JavaScript',
+  },
+  {
+    firstName: 'Victoria',
+    lastName: 'T.',
+    country: 'Puerto Rico',
+    continent: 'Americas',
+    age: 30,
+    language: 'Python',
+  },
+  {
+    firstName: 'Emma',
+    lastName: 'B.',
+    country: 'Norway',
+    continent: 'Europe',
+    age: 19,
+    language: 'Clojure',
+  },
+];
+console.log(getFirstPython(list5)); //Victoria, Puerto Rico
