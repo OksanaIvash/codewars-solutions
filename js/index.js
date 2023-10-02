@@ -712,3 +712,36 @@ console.log(greetDevelopers(list3));
 
 //   return personCopy;
 // });
+
+//42.Coding Meetup #3 - Higher-Order Functions Series - Is Ruby coming?
+//https://www.codewars.com/kata/5827acd5f524dd029d0005a4/train/javascript
+
+const isRubyComing = (list) => list.some((dev) => dev.language === 'Ruby');
+
+const list4 = [
+  {
+    firstName: 'Sofia',
+    lastName: 'I.',
+    country: 'Argentina',
+    continent: 'Americas',
+    age: 35,
+    language: 'Java',
+  },
+  {
+    firstName: 'Lukas',
+    lastName: 'X.',
+    country: 'Croatia',
+    continent: 'Europe',
+    age: 35,
+    language: 'Python',
+  },
+  {
+    firstName: 'Madison',
+    lastName: 'U.',
+    country: 'United States',
+    continent: 'Americas',
+    age: 32,
+    language: 'Ruby',
+  },
+];
+console.log(isRubyComing(list4));
