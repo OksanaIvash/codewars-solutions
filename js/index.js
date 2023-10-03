@@ -800,7 +800,7 @@ function countLanguages(list) {
   return objLanguages;
 }
 
-var list6 = [
+const list6 = [
   {
     firstName: 'Noah',
     lastName: 'M.',
@@ -907,3 +907,56 @@ const list7 = [
 ];
 
 console.log(isSameLanguage(list7)); // true
+
+//46.Coding Meetup #7 - Higher-Order Functions Series - Find the most senior developer
+//https://www.codewars.com/kata/582887f7d04efdaae3000090/javascript
+
+function findSenior(list) {
+  // Перевірка на пустий список або відсутність списку
+  if (!list || list.length === 0) {
+    return null;
+  }
+
+  // Знаходження максимального віку
+  const maxAge = Math.max(...list.map((dev) => dev.age));
+
+  // Фільтрація розробників з максимальним віком
+  const seniorDevelopers = list.filter((dev) => dev.age === maxAge);
+
+  return seniorDevelopers;
+}
+const list8 = [
+  {
+    firstName: 'Gabriel',
+    lastName: 'X.',
+    country: 'Monaco',
+    continent: 'Europe',
+    age: 49,
+    language: 'PHP',
+  },
+  {
+    firstName: 'Odval',
+    lastName: 'F.',
+    country: 'Mongolia',
+    continent: 'Asia',
+    age: 38,
+    language: 'Python',
+  },
+  {
+    firstName: 'Emilija',
+    lastName: 'S.',
+    country: 'Lithuania',
+    continent: 'Europe',
+    age: 19,
+    language: 'Python',
+  },
+  {
+    firstName: 'Sou',
+    lastName: 'B.',
+    country: 'Japan',
+    continent: 'Asia',
+    age: 49,
+    language: 'PHP',
+  },
+];
+console.log(findSenior(list8));
