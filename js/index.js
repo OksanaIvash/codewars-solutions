@@ -801,13 +801,41 @@ function countLanguages(list) {
 }
 
 var list6 = [
-  { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C' },
-  { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript' },
-  { firstName: 'Ramon', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby' },
-  { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C' },
-];;
-console.log(countLanguages(list6));//{ C: 2, JavaScript: 1, Ruby: 1 }
- 
+  {
+    firstName: 'Noah',
+    lastName: 'M.',
+    country: 'Switzerland',
+    continent: 'Europe',
+    age: 19,
+    language: 'C',
+  },
+  {
+    firstName: 'Anna',
+    lastName: 'R.',
+    country: 'Liechtenstein',
+    continent: 'Europe',
+    age: 52,
+    language: 'JavaScript',
+  },
+  {
+    firstName: 'Ramon',
+    lastName: 'R.',
+    country: 'Paraguay',
+    continent: 'Americas',
+    age: 29,
+    language: 'Ruby',
+  },
+  {
+    firstName: 'George',
+    lastName: 'B.',
+    country: 'England',
+    continent: 'Europe',
+    age: 81,
+    language: 'C',
+  },
+];
+console.log(countLanguages(list6)); //{ C: 2, JavaScript: 1, Ruby: 1 }
+
 //---------------------version2----------------
 //Замість об'єкта для зберігання кількості розробників для кожної мови програмування,
 //ми можемо використовувати Map, що забезпечить більшу гнучкість!!!
@@ -826,3 +854,56 @@ console.log(countLanguages(list6));//{ C: 2, JavaScript: 1, Ruby: 1 }
 //   }
 //   return Object.fromEntries(languageMap); //перетворення об'єкта типу Map (в даному випадку languageMap) на об'єкт типу Object;
 // }
+
+//45.Coding Meetup #6 - Higher-Order Functions Series - Can they code in the same language?
+//https://www.codewars.com/kata/58287977ef8d4451f90001a0/javascript
+
+const isSameLanguage = (list) => {
+  // Перевіряємо, чи переданий список і чи він не порожній
+  if (!list || list.length === 0) {
+    return false;
+  }
+
+  const languages = list.map((dev) => dev.language); //['JavaScript', 'JavaScript', 'JavaScript']
+  const uniqueLanguages = new Set(languages); //{'JavaScript'}
+
+  return uniqueLanguages.size === 1; // 1 === 1 => true
+};
+//---------------------version2----------------
+//можна повернути результат перевірки без використання додаткових змін:
+// const isSameLanguage = (list) => {
+//   if (!list || list.length === 0) {
+//     return false;
+//   }
+
+//   return new Set(list.map((dev) => dev.language)).size === 1;
+// };
+
+const list7 = [
+  {
+    firstName: 'Daniel',
+    lastName: 'J.',
+    country: 'Aruba',
+    continent: 'Americas',
+    age: 42,
+    language: 'JavaScript',
+  },
+  {
+    firstName: 'Kseniya',
+    lastName: 'T.',
+    country: 'Belarus',
+    continent: 'Europe',
+    age: 22,
+    language: 'JavaScript',
+  },
+  {
+    firstName: 'Hanna',
+    lastName: 'L.',
+    country: 'Hungary',
+    continent: 'Europe',
+    age: 65,
+    language: 'JavaScript',
+  },
+];
+
+console.log(isSameLanguage(list7)); // true
