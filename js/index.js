@@ -960,3 +960,66 @@ const list8 = [
   },
 ];
 console.log(findSenior(list8));
+
+//47. Coding Meetup #8 - Higher-Order Functions Series - Will all continents be represented?
+//https://www.codewars.com/kata/58291fea7ff3f640980000f9/javascript
+
+function allContinents(list, allContinentsList) {
+  if (!list || list.length === 0) {
+    return false;
+  }
+
+  const continentsInList = new Set(list.map((dev) => dev.continent));
+
+  for (const continent of allContinentsList) {
+    if (!continentsInList.has(continent)) {
+      return false;
+    }
+  }
+  return true;
+}
+const allContinentsList = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']; //варто використовувати змінну або отримувати цей масив
+// як параметр функції.Це зробить функцію більш загальним і зручним для використання в майбутньому.
+const list9 = [
+  {
+    firstName: 'Fatima',
+    lastName: 'A.',
+    country: 'Algeria',
+    continent: 'Africa',
+    age: 25,
+    language: 'JavaScript',
+  },
+  {
+    firstName: 'Agustín',
+    lastName: 'M.',
+    country: 'Chile',
+    continent: 'Americas',
+    age: 37,
+    language: 'C',
+  },
+  {
+    firstName: 'Jing',
+    lastName: 'X.',
+    country: 'China',
+    continent: 'Asia',
+    age: 39,
+    language: 'Ruby',
+  },
+  {
+    firstName: 'Laia',
+    lastName: 'P.',
+    country: 'Andorra',
+    continent: 'Europe',
+    age: 55,
+    language: 'Ruby',
+  },
+  {
+    firstName: 'Oliver',
+    lastName: 'Q.',
+    country: 'Australia',
+    continent: 'Oceania',
+    age: 65,
+    language: 'PHP',
+  },
+];
+console.log(allContinents(list9, allContinentsList));
