@@ -1146,7 +1146,7 @@ console.log(isAgeDiverse(list10)); //true
 function addUsername(list) {
   const currentYear = new Date().getFullYear(); //отримання поточного року
   list.forEach(function (developer) {
-    const birthYear = currentYear - developer.age;//рік народження учасника
+    const birthYear = currentYear - developer.age; //рік народження учасника
     developer.username = `${developer.firstName}${developer.lastName.charAt(
       0
     )}${birthYear}`.toLocaleLowerCase();
@@ -1173,3 +1173,33 @@ const list11 = [
   },
 ];
 console.log(addUsername(list11));
+
+//50.Coding Meetup #11 - Higher-Order Functions Series - Find the average age
+//https://www.codewars.com/kata/582ba36cc1901399a70005fc/javascript
+
+// Функція для обчислення середнього віку розробників у списку
+function getAverageAge(list) {
+  const ageDeveloper = list.map((dev) => dev.age);
+  const sumAge = ageDeveloper.reduce((acc, current) => acc + current, 0);
+  const middleAge = Math.round(sumAge / ageDeveloper.length);
+  return middleAge;
+}
+const list12 = [
+  {
+    firstName: 'Maria',
+    lastName: 'Y.',
+    country: 'Cyprus',
+    continent: 'Europe',
+    age: 30,
+    language: 'Java',
+  },
+  {
+    firstName: 'Victoria',
+    lastName: 'T.',
+    country: 'Puerto Rico',
+    continent: 'Americas',
+    age: 70,
+    language: 'Python',
+  },
+];
+console.log(getAverageAge(list12));
