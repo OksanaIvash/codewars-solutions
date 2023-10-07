@@ -609,11 +609,13 @@ const list1 = [
   },
 ];
 
-console.log(findPersonWithOddName(list1)); // [{ firstName: 'Aba', lastName: 'N.', country: 'Ghana', continent: 'Africa', age: 21, language: 'Python' }]
+console.log(findPersonWithOddName(list1));
 
 //40.Coding Meetup #1 - Higher-Order Functions Series - Count the number of JavaScript developers coming from Europe
 //https://www.codewars.com/kata/582746fa14b3892727000c4f/javascript
 
+// Функція призначена для підрахунку кількості розробників, які працюють у Європі
+//і використовують мову програмування JavaScript
 const countDevelopersInEurope = (list) =>
   list
     .map(
@@ -661,6 +663,7 @@ console.log(countDevelopersInEurope(list2)); //1
 //41. Higher-Order Functions Series - Greet developers
 //https://www.codewars.com/kata/58279e13c983ca4a2a00002a/train/javascript
 
+// Функція призначена для додавання привітання до об'єктів розробників у списку
 function greetDevelopers(list) {
   list.forEach(function (developer) {
     developer.greeting = `Hi ${developer.firstName}, what do you like the most about ${developer.language}?`;
@@ -697,10 +700,6 @@ const list3 = [
 ];
 
 console.log(greetDevelopers(list3));
-//[  { firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java', greeting: 'Hi Sofia, what do you like the most about Java?'},
-//{ firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: 'Python', greeting: 'Hi Lukas, what do you like the most about Python?' },
-//{ firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby', greeting: 'Hi Madison, what do you like the most about Ruby?' } ];
-
 //---------------------version2----------------
 //Версія зі створенням копії вхідного масиву
 // const greetDevelopers = (list) => list.map((person) => {
@@ -716,6 +715,7 @@ console.log(greetDevelopers(list3));
 //42.Coding Meetup #3 - Higher-Order Functions Series - Is Ruby coming?
 //https://www.codewars.com/kata/5827acd5f524dd029d0005a4/train/javascript
 
+// Функція призначена для перевірки, чи є хоча б один розробник у списку розробників
 const isRubyComing = (list) => list.some((dev) => dev.language === 'Ruby');
 
 const list4 = [
@@ -749,6 +749,7 @@ console.log(isRubyComing(list4)); //true
 //43. Coding Meetup #4 - Higher-Order Functions Series - Find the first Python developer
 //https://www.codewars.com/kata/5827bc50f524dd029d0005f2/javascript
 
+// Функція призначена для знаходження першого розробника, який використовує мову програмування "Python"
 const getFirstPython = (list) => {
   const developer = list.find((dev) => dev.language === 'Python');
   return developer
@@ -787,6 +788,8 @@ console.log(getFirstPython(list5)); //Victoria, Puerto Rico
 //44. Coding Meetup #5 - Higher-Order Functions Series - Prepare the count of languages
 //https://www.codewars.com/kata/5828713ed04efde70e000346/javascript
 
+// Функція призначена для обчислення кількості розробників, які працюють кожною
+// з унікальних мов програмування у списку розробників
 function countLanguages(list) {
   const objLanguages = {};
   for (const dev of list) {
@@ -858,6 +861,8 @@ console.log(countLanguages(list6)); //{ C: 2, JavaScript: 1, Ruby: 1 }
 //45.Coding Meetup #6 - Higher-Order Functions Series - Can they code in the same language?
 //https://www.codewars.com/kata/58287977ef8d4451f90001a0/javascript
 
+// Функція призначена для перевірки, чи всі розробники у заданому списку
+// працюють з однією і тією ж мовою програмування.
 const isSameLanguage = (list) => {
   // Перевіряємо, чи переданий список і чи він не порожній
   if (!list || list.length === 0) {
@@ -911,6 +916,7 @@ console.log(isSameLanguage(list7)); // true
 //46.Coding Meetup #7 - Higher-Order Functions Series - Find the most senior developer
 //https://www.codewars.com/kata/582887f7d04efdaae3000090/javascript
 
+// Функція призначена для знаходження розробників з найвищим віком у списку розробників
 function findSenior(list) {
   // Перевірка на пустий список або відсутність списку
   if (!list || list.length === 0) {
@@ -964,6 +970,7 @@ console.log(findSenior(list8));
 //47. Coding Meetup #8 - Higher-Order Functions Series - Will all continents be represented?
 //https://www.codewars.com/kata/58291fea7ff3f640980000f9/javascript
 
+// Функція призначена для перевірки, чи присутні всі континенти з заданого списку
 function allContinents(list, allContinentsList) {
   if (!list || list.length === 0) {
     return false;
@@ -1027,6 +1034,7 @@ console.log(allContinents(list9, allContinentsList)); //true
 //48. Coding Meetup #9 - Higher-Order Functions Series - Is the meetup age-diverse?
 //https://www.codewars.com/kata/5829ca646d02cd1a65000284/javascript
 
+// Функція призначена для перевірки, чи включає список розробників представників різних вікових груп
 function isAgeDiverse(list) {
   const ageGroups = [
     { min: 10, max: 19 },
@@ -1143,6 +1151,7 @@ console.log(isAgeDiverse(list10)); //true
 //49.Coding Meetup #10 - Higher-Order Functions Series - Create usernames
 //https://www.codewars.com/kata/582a53ed261c2af9d200018c/javascript
 
+// Функція призначена для додавання імен користувачів (username) до об'єктів розробників у списку
 function addUsername(list) {
   const currentYear = new Date().getFullYear(); //отримання поточного року
   list.forEach(function (developer) {
@@ -1203,3 +1212,57 @@ const list12 = [
   },
 ];
 console.log(getAverageAge(list12));
+
+//51.Coding Meetup #12 - Higher-Order Functions Series - Find GitHub admins
+//https://www.codewars.com/kata/582dace555a1f4d859000058/javascript
+
+// Функція призначена для пошуку та фільтрації розробників зі списку,
+// які є адміністраторами GitHub і працюють з певною мовою програмування.
+function findAdmin(list, lang) {
+  const filteredList = list.filter(
+    (dev) => dev.githubAdmin === 'yes' && dev.language === lang
+  );
+
+  return filteredList;
+}
+
+const list13 = [
+  {
+    firstName: 'Harry',
+    lastName: 'K.',
+    country: 'Brazil',
+    continent: 'Americas',
+    age: 22,
+    language: 'JavaScript',
+    githubAdmin: 'yes',
+  },
+  {
+    firstName: 'Kseniya',
+    lastName: 'T.',
+    country: 'Belarus',
+    continent: 'Europe',
+    age: 49,
+    language: 'Ruby',
+    githubAdmin: 'no',
+  },
+  {
+    firstName: 'Jing',
+    lastName: 'X.',
+    country: 'China',
+    continent: 'Asia',
+    age: 34,
+    language: 'JavaScript',
+    githubAdmin: 'yes',
+  },
+  {
+    firstName: 'Piotr',
+    lastName: 'B.',
+    country: 'Poland',
+    continent: 'Europe',
+    age: 128,
+    language: 'JavaScript',
+    githubAdmin: 'no',
+  },
+];
+
+console.log(findAdmin(list13, 'JavaScript'));
