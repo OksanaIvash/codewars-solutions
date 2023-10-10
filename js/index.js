@@ -1408,3 +1408,36 @@ const list15 = [
   },
 ];
 console.log(orderFood(list15));
+
+//54.Coding Meetup #15 - Higher-Order Functions Series - Find the odd names
+//https://www.codewars.com/kata/583a8bde28019d615a000035/javascript
+
+//Функція фільтрує масив, залишаючи лише розробників, чиє ім'я має непарну суму ASCII-кодів символів в імені.
+function findOddNames(list) {
+  return list.filter((dev) => {
+    const firstNameCharSum = dev.firstName
+      .split('')
+      .reduce((sum, char) => sum + char.charCodeAt(0), 0);
+    return firstNameCharSum % 2 !== 0;
+  });
+}
+
+const list16 = [
+  {
+    firstName: 'Aba',
+    lastName: 'N.',
+    country: 'Ghana',
+    continent: 'Africa',
+    age: 21,
+    language: 'Python',
+  },
+  {
+    firstName: 'Abb',
+    lastName: 'O.',
+    country: 'Israel',
+    continent: 'Asia',
+    age: 39,
+    language: 'Java',
+  },
+];
+console.log(findOddNames(list16));
