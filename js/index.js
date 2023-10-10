@@ -1266,3 +1266,33 @@ const list13 = [
 ];
 
 console.log(findAdmin(list13, 'JavaScript'));
+
+//52.Coding Meetup #13 - Higher-Order Functions Series - Is the meetup language-diverse?
+//https://www.codewars.com/kata/58381907f8ac48ae070000de/train/javascript
+
+// функція призначена для перевірки, чи є розподіл розробників за мовами програмування різноманітним
+function isLanguageDiverse(list) {
+  const languageMap = new Map();
+
+  // Створення мапи, де ключ - мова, значення - кількість розробників, які володіють цією мовою.
+  for (const dev of list) {
+    const language = dev.language;
+    const count = languageMap.get(language) || 0;
+    languageMap.set(language, count + 1); // Лічильник для обраної мови
+  }
+
+  // Створення масиву кількостей розробників кожної мови та сортування його в порядку спадання.
+  const arrNumLanguages = Array.from(languageMap.values()).sort(
+    (a, b) => b - a
+  );
+
+  // Знаходження найбільшої кількості розробників мови.
+  const maxNumLanguage = arrNumLanguages[0];
+
+  // Перевірка, чи кожна інша мова має щонайменше половину розробників найбільшої мови.
+  const isTwiceAsMany = arrNumLanguages
+    .slice(1)
+    .every((num) => num * 2 >= maxNumLanguage);
+
+  return isTwiceAsMany;
+}
