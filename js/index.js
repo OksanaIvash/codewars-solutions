@@ -1296,3 +1296,115 @@ function isLanguageDiverse(list) {
 
   return isTwiceAsMany;
 }
+
+const list14 = [
+  {
+    firstName: 'Daniel',
+    lastName: 'J.',
+    country: 'Aruba',
+    continent: 'Americas',
+    age: 42,
+    language: 'Python',
+  },
+  {
+    firstName: 'Kseniya',
+    lastName: 'T.',
+    country: 'Belarus',
+    continent: 'Europe',
+    age: 22,
+    language: 'Ruby',
+  },
+  {
+    firstName: 'Sou',
+    lastName: 'B.',
+    country: 'Japan',
+    continent: 'Asia',
+    age: 43,
+    language: 'Ruby',
+  },
+  {
+    firstName: 'Hanna',
+    lastName: 'L.',
+    country: 'Hungary',
+    continent: 'Europe',
+    age: 95,
+    language: 'JavaScript',
+  },
+  {
+    firstName: 'Jayden',
+    lastName: 'P.',
+    country: 'Jamaica',
+    continent: 'Americas',
+    age: 18,
+    language: 'JavaScript',
+  },
+  {
+    firstName: 'Joao',
+    lastName: 'D.',
+    country: 'Portugal',
+    continent: 'Europe',
+    age: 25,
+    language: 'JavaScript',
+  },
+];
+console.log(isLanguageDiverse(list14));
+
+//53.Coding Meetup #14 - Higher-Order Functions Series - Order the food
+//https://www.codewars.com/kata/583952fbc23341c7180002fd/train/javascript
+
+//функція призначена для обробки списку об'єктів та підрахунку кількості кожної страви у списку
+function orderFood(list) {
+  const foodMap = new Map();
+
+  // Цикл для підрахунку кількості кожної страви
+  for (const dev of list) {
+    const food = dev.meal;
+    const count = foodMap.get(food) || 0;
+    foodMap.set(food, count + 1);
+  }
+
+  // Перетворення об'єкта типу Map на об'єкт типу Object
+  const foodObject = Object.fromEntries(foodMap);
+
+  return foodObject;
+}
+
+const list15 = [
+  {
+    firstName: 'Noah',
+    lastName: 'M.',
+    country: 'Switzerland',
+    continent: 'Europe',
+    age: 19,
+    language: 'C',
+    meal: 'vegetarian',
+  },
+  {
+    firstName: 'Anna',
+    lastName: 'R.',
+    country: 'Liechtenstein',
+    continent: 'Europe',
+    age: 52,
+    language: 'JavaScript',
+    meal: 'standard',
+  },
+  {
+    firstName: 'Ramona',
+    lastName: 'R.',
+    country: 'Paraguay',
+    continent: 'Americas',
+    age: 29,
+    language: 'Ruby',
+    meal: 'vegan',
+  },
+  {
+    firstName: 'George',
+    lastName: 'B.',
+    country: 'England',
+    continent: 'Europe',
+    age: 81,
+    language: 'C',
+    meal: 'vegetarian',
+  },
+];
+console.log(orderFood(list15));
