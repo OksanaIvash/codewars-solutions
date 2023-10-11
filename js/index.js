@@ -1556,3 +1556,23 @@ const list18 = [
   },
 ];
 console.log(sortByLanguage(list18));
+
+//57.Replace With Alphabet Position
+//https://www.codewars.com/kata/546f922b54af40e1e90001da/javascript
+
+//функція призначена для перетворення тексту у послідовність чисел, які відповідають позиціїм букв в англійському алфавіт
+function alphabetPosition(text) {
+  const result = [];
+
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i].toLowerCase();
+
+    if (/^[a-z]$/.test(char)) {
+      //перевіряємо чи char (літера) є малою літерою англійського алфавіту від 'a' до 'z'.
+      result.push(char.charCodeAt(0) - 'a'.charCodeAt(0) + 1); //перетворення літери у відповідне число
+    }
+  }
+
+  return result.join(' ');
+}
+console.log(alphabetPosition('The narwhal bacons at midnight.'));
