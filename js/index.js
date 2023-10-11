@@ -1441,3 +1441,52 @@ const list16 = [
   },
 ];
 console.log(findOddNames(list16));
+
+//55.Coding Meetup #16 - Higher-Order Functions Series - Ask for missing details
+//https://codewars.com/kata/583d972b8bbc0402cf000121/javascript
+
+//функція призначена для перевірки об'єктів розробників на наявність недостаючої інформації
+// та створення запитів для відсутніх даних, якщо такі є.
+function askForMissingDetails(list) {
+  return list
+    .map((dev) => {
+      // Створюємо копію об'єкта, щоб зберегти початковий об'єкт без змін.
+      const developerCopy = { ...dev };
+
+      for (let key in developerCopy) {
+        if (developerCopy[key] === null) {
+          developerCopy.question = `Hi, could you please provide your ${key}.`;
+        }
+      }
+      return developerCopy;
+    })
+    .filter((developerCopy) => developerCopy.question);
+}
+
+const list17 = [
+  {
+    firstName: null,
+    lastName: 'I.',
+    country: 'Argentina',
+    continent: 'Americas',
+    age: 35,
+    language: 'Java',
+  },
+  {
+    firstName: 'Lukas',
+    lastName: 'X.',
+    country: 'Croatia',
+    continent: 'Europe',
+    age: 35,
+    language: null,
+  },
+  {
+    firstName: 'Madison',
+    lastName: 'U.',
+    country: 'United States',
+    continent: 'Americas',
+    age: 32,
+    language: 'Ruby',
+  },
+];
+console.log(askForMissingDetails(list17));
