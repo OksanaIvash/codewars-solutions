@@ -1576,3 +1576,39 @@ function alphabetPosition(text) {
   return result.join(' ');
 }
 console.log(alphabetPosition('The narwhal bacons at midnight.'));
+
+//58.Alphabetized
+//https://www.codewars.com/kata/5970df092ef474680a0000c9/train/javascript
+
+//функція призначена для сортування літер у вхідному рядку 
+function alphabetized(s) {
+  //видаляємо пробіли з вхідного рядку та знаходимо всі послідовності літер.
+  const result = s.replace(/\s/g, '').match(/[a-zA-Z]+/g);
+
+  if (result) {
+    // об'єднуємо літери в одну стрічку, сортуємо та повертаємо відсортований рядок.
+    const sortedString = result
+      .join('')
+      .split('')
+      .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
+      .join('');
+    return sortedString;
+  } else {
+    //якщо літери не знайдені, повертаємо пусту стрічку.
+    return '';
+  }
+}
+
+//---------------------version2----------------
+// const alphabetized = (s) =>
+//   s
+//     //видаляємо всі символи, які не є літерами (будь-якого регістру)
+//     .replace(/[^a-z]/gi, '')
+//     //розбиваємо рядок на окремі символи
+//     .split('')
+//     //сортуємо символи відповідно до локалізованих правил.
+//     .sort((a, b) => a.localeCompare(b.toLowerCase()))
+//     //об'єднуємо відсортовані символи в одну стрічку.
+//     .join('');
+
+console.log(alphabetized('22337788defLlLlnNnNqs')); //"defLlLlnNnNqs"
