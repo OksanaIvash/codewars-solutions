@@ -1618,21 +1618,12 @@ console.log(alphabetized('22337788defLlLlnNnNqs')); //"defLlLlnNnNqs"
 
 //функція призначена для заміни всіх входжень конкретного значення на інше значення у вхідному масиві
 function replaceAll(seq, find, replace) {
-  return seq.map((item) => (item === find ? replace : item));
-}
-console.log(replaceAll([1, 2, 2], 1, 2)); //[2,2,2]
+  // Спочатку ми створюємо копію вхідного рядка або масиву, використовуючи оператор [...seq]
+  const arr = [...seq].map((item) => (item === find ? replace : item));
 
-//---------------------version2----------------
-// function replaceAll(seq, find, replace) {
-//   if (seq.includes(find)) {
-//     const updatedSeq = seq.map((num) => {
-//       if (num === find) {
-//         return replace;
-//       } else {
-//         return num;
-//       }
-//     });
-//     return updatedSeq;
-//   }
-//   return seq;
-// }
+  // Далі ми перевіряємо тип вхідного параметру seq.
+  // Якщо seq є рядком, ми з'єднуємо масив arr назад у рядок, використовуючи метод join.
+  // Якщо seq не є рядком (припускаючи, що це масив), ми просто повертаємо масив arr.
+  return typeof seq === 'string' ? arr.join('') : arr;
+}
+console.log(replaceAll([1, 2, 2], 1, 2)); //[2, 2, 2]
