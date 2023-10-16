@@ -1580,7 +1580,7 @@ console.log(alphabetPosition('The narwhal bacons at midnight.'));
 //58.Alphabetized
 //https://www.codewars.com/kata/5970df092ef474680a0000c9/train/javascript
 
-//функція призначена для сортування літер у вхідному рядку 
+//функція призначена для сортування літер у вхідному рядку
 function alphabetized(s) {
   //видаляємо пробіли з вхідного рядку та знаходимо всі послідовності літер.
   const result = s.replace(/\s/g, '').match(/[a-zA-Z]+/g);
@@ -1612,3 +1612,27 @@ function alphabetized(s) {
 //     .join('');
 
 console.log(alphabetized('22337788defLlLlnNnNqs')); //"defLlLlnNnNqs"
+
+//59.Replace all items
+//https://www.codewars.com/kata/57ae18c6e298a7a6d5000c7a/train/javascript
+
+//функція призначена для заміни всіх входжень конкретного значення на інше значення у вхідному масиві
+function replaceAll(seq, find, replace) {
+  return seq.map((item) => (item === find ? replace : item));
+}
+console.log(replaceAll([1, 2, 2], 1, 2)); //[2,2,2]
+
+//---------------------version2----------------
+// function replaceAll(seq, find, replace) {
+//   if (seq.includes(find)) {
+//     const updatedSeq = seq.map((num) => {
+//       if (num === find) {
+//         return replace;
+//       } else {
+//         return num;
+//       }
+//     });
+//     return updatedSeq;
+//   }
+//   return seq;
+// }
