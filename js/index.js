@@ -1627,3 +1627,51 @@ function replaceAll(seq, find, replace) {
   return typeof seq === 'string' ? arr.join('') : arr;
 }
 console.log(replaceAll([1, 2, 2], 1, 2)); //[2, 2, 2]
+
+//60.Sort My Animals
+//https://www.codewars.com/kata/58ff1c8b13b001a5a50005b4/javascript
+
+//Функція призначена для сортування масиву звірів за кількістю ніг та іменами звірів.
+const sortAnimal = (animals) => {
+  const copySortAnimals = [...animals];
+  copySortAnimals.sort((a, b) => {
+    if (a.numberOfLegs < b.numberOfLegs) return -1;
+    if (a.numberOfLegs > b.numberOfLegs) return 1;
+    if (a.name < b.name) return -1;
+    if (a.name > b.name) return 1;
+    return 0;
+  });
+  return copySortAnimals;
+};
+
+const doTest = [
+  { name: 'Cat', numberOfLegs: 4 },
+  { name: 'Snake', numberOfLegs: 0 },
+  { name: 'Dog', numberOfLegs: 4 },
+  { name: 'Pig', numberOfLegs: 4 },
+  { name: 'Human', numberOfLegs: 2 },
+  { name: 'Bird', numberOfLegs: 2 },
+];
+
+console.log(sortAnimal(doTest));
+
+//---------------------version2----------------
+// const sortAnimal = (animals) => {
+//   // Створюємо копію вхідного масиву animals, щоб не змінювати оригінальний масив.
+//   const copySortAnimals = [...animals];
+
+//   // Використовуємо метод .sort() для сортування звірів.
+//   copySortAnimals.sort((a, b) => {
+//     // Обчислюємо різницю кількості ніг між звірами a та b.
+//     const legsComparison = a.numberOfLegs - b.numberOfLegs;
+
+//     // Якщо різниця не дорівнює нулю, то повертаємо результат порівняння кількостей ніг.
+//     if (legsComparison !== 0) return legsComparison;
+
+//     // Якщо кількість ніг однакова, використовуємо метод .localeCompare() для порівняння імен звірів.
+//     return a.name.localeCompare(b.name);
+//   });
+
+//   // Повертаємо відсортований масив копії звірів.
+//   return copySortAnimals;
+// };
