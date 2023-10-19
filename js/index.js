@@ -1675,3 +1675,67 @@ console.log(sortAnimal(doTest));
 //   // Повертаємо відсортований масив копії звірів.
 //   return copySortAnimals;
 // };
+
+//61.Triple Sorting - Sort & Stringify a list by 3 attributes
+//https://www.codewars.com/kata/5829c2c8ef8d4474300000fa/javascript
+
+//Функція отримує список об’єктів Student і сортує їх відповідно до вказаних критеріїв.
+function sort(students) {
+  // Копіюємо вхідний масив студентів, щоб уникнути його змін.
+  const copyListStudents = [...students];
+
+  copyListStudents.sort((a, b) => {
+    //Сортуємо студентів за gpa у спадаючому порядку
+    if (a.gpa > b.gpa) return -1;
+    if (a.gpa < b.gpa) return 1;
+    //Сортуємо студентів за першою літерою прізвища
+    if (a.fullName.split(' ')[1][0] > b.fullName.split(' ')[1][0]) return 1;
+    if (a.fullName.split(' ')[1][0] < b.fullName.split(' ')[1][0]) return -1;
+    //Сортуємо студентів за віком за зростанням
+    if (a.age < b.age) return -1;
+    if (a.age > b.age) return 1;
+    return 0;
+  });
+
+  // Повертаємо відсортований масив імен у форматі рядка.
+  const sortedNames = copyListStudents.map((student) => student.fullName);
+  return sortedNames.join(',');
+}
+
+class Student {
+  constructor(age, gpa, fullName) {
+    this.age = age;
+    this.gpa = gpa;
+    this.fullName = fullName;
+  }
+}
+const students = [
+  new Student(23, 88, 'David Goodman'),
+  new Student(25, 82, 'Mark Rose'),
+  new Student(22, 90, 'Jane Doe'),
+  new Student(25, 90, 'Jane Dane'),
+];
+console.log(sort(students));
+
+//---------------------version2----------------
+// function sort(students) {
+//   return students
+//     .sort((a, b) => {
+//       // Compare by GPA in descending order
+//       if (a.gpa !== b.gpa) {
+//         return b.gpa - a.gpa;
+//       }
+
+//       // Compare by the first letter of last name in ascending order
+//       if (a.fullName.split(' ')[1][0] !== b.fullName.split(' ')[1][0]) {
+//         return a.fullName
+//           .split(' ')[1][0]
+//           .localeCompare(b.fullName.split(' ')[1][0]);
+//       }
+
+//       // Compare by age in ascending order
+//       return a.age - b.age;
+//     })
+//     .map((student) => student.fullName)
+//     .join(',');
+// }
