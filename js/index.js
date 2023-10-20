@@ -1717,25 +1717,51 @@ const students = [
 ];
 console.log(sort(students));
 
-//---------------------version2----------------
-// function sort(students) {
-//   return students
-//     .sort((a, b) => {
-//       // Compare by GPA in descending order
-//       if (a.gpa !== b.gpa) {
-//         return b.gpa - a.gpa;
-//       }
+//62.Sorted list
+//https://www.codewars.com/kata/53138a5dbb244a40680000a3/train/javascript
 
-//       // Compare by the first letter of last name in ascending order
-//       if (a.fullName.split(' ')[1][0] !== b.fullName.split(' ')[1][0]) {
-//         return a.fullName
-//           .split(' ')[1][0]
-//           .localeCompare(b.fullName.split(' ')[1][0]);
-//       }
+//Клас SortedList дозволяє додавати числа до списку та отримувати їх за індексом, і при цьому список завжди залишається впорядкованим
+class SortedList {
+  //Створюємо порожній список, в який ми будемо класти числа
+  constructor(initialList = []) {
+    //створюємо копію списка
+    this.list = [...initialList];
+    this.list.sort((a, b) => a - b); // Сортуємо список
+  }
 
-//       // Compare by age in ascending order
-//       return a.age - b.age;
-//     })
-//     .map((student) => student.fullName)
-//     .join(',');
-// }
+  // Цей метод дозволяє додати число до списку
+  add(val) {
+    //Перевіряємо, де вставити нове число, щоб список залишався впорядкованим.
+    const ix = this.list.findIndex((i) => i > val);
+    //Якщо при виконанні методу findIndex() не було знайдено жодного збігу,
+    //поверне - 1 => тоді кладемо дане число в кінець списку(тобто наше число є найбільшим)
+    if (ix < 0) this.list.push(val);
+    // В іншому випадку, вставляємо число на відповідне місце, перед числом, яке більше за нього.
+    else this.list.splice(ix, 0, val);
+  }
+
+  //Метод, який дозволяє отримати число за індексом 'ix'
+  get(ix) {
+    //Якщо індекс виходить за межі списку, то цей метод видасть помилку.
+    if (ix < 0 || ix >= this.list.length) {
+      throw new Error('Invalid index');
+    }
+    //В іншому випадку, він поверне число за заданим індексом.
+    return this.list[ix];
+  }
+
+  //Створюємо властивість, яка повертає кількість чисел у списку
+  get length() {
+    return this.list.length;
+  }
+}
+
+const sortedList = new SortedList([45, 1, 10]);
+sortedList.add(3);
+sortedList.add(2);
+
+console.log(sortedList.get(0)); // 1
+console.log(sortedList.get(1)); // 2
+console.log(sortedList.length);// 5
+console.log(sortedList.list);// [1, 2, 3, 10, 45]
+console.log(sortedList.get(7)); // Error('Invalid index')
