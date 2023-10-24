@@ -1764,4 +1764,4 @@ console.log(sortedList.get(0)); // 1
 console.log(sortedList.get(1)); // 2
 console.log(sortedList.length);// 5
 console.log(sortedList.list);// [1, 2, 3, 10, 45]
-console.log(sortedList.get(7)); // Error('Invalid index')
+// console.log(sortedList.get(7)); // Error('Invalid index')
