@@ -1765,3 +1765,25 @@ console.log(sortedList.get(1)); // 2
 console.log(sortedList.length);// 5
 console.log(sortedList.list);// [1, 2, 3, 10, 45]
 // console.log(sortedList.get(7)); // Error('Invalid index')
+
+// 63. Training JS #9: loop statement --while and do..while
+// https://www.codewars.com/kata/57216d4bcdd71175d6000560/javascript
+
+// Функція додає '*' символи до початку і кінця рядка str у залежності від парності n,
+//  повертаючи модифікований рядок.
+function padIt(str, n) {
+  let copyString = str;
+  let count = 0;
+
+  while (count < n) {
+    if (count % 2 === 0) {
+      copyString = "*" + copyString; // Add '*' to the beginning of the line
+    } else {
+      copyString = copyString + "*"; // Add '*' to the end of the line
+    }
+    count++;
+  }
+  return copyString;
+}
+
+console.log(padIt("a", 2));
