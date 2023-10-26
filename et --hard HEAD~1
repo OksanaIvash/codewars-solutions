@@ -1,0 +1,273 @@
+[33mcommit c2519b71fc12376596428e3978c6ff30f506329d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Thu Oct 26 13:19:29 2023 +0300
+
+    function padIt(str, n) {
+
+[33mcommit 7d9e6d5f67d3c1814497f619b220aecbe466edcf[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Wed Oct 25 17:29:54 2023 +0300
+
+    Loop statement --while
+
+[33mcommit ba5533b390da6d3c668ff6d49cd3b365f9b25b71[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Tue Oct 24 09:47:51 2023 +0300
+
+    Fixed index.html
+
+[33mcommit c0edb2da0f209b440a19e3a4e854c98266a90e5a[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Fri Oct 20 19:51:31 2023 +0300
+
+    class Sorted List
+
+[33mcommit 488960488e2f40697c4e00af3d6244eb6ddd8852[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Thu Oct 19 17:41:52 2023 +0300
+
+    Sort & Stringify a list by 3 attributes
+
+[33mcommit cbd82e0bcf8a93a5d28b0221af11dc7f253c37ca[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Tue Oct 17 12:18:53 2023 +0300
+
+    Sort My Animals
+
+[33mcommit 117d9035076020078c45bb61f776b0f24c041c0d[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Mon Oct 16 18:37:22 2023 +0300
+
+    Fixed replace all items
+
+[33mcommit 673b937683a9a46d62aa7c2dbbe075b3021c3e3c[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Mon Oct 16 17:21:07 2023 +0300
+
+    Replace all items
+
+[33mcommit c8ebf720f52c94a467bc6033eeddd7a55074aa0a[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Thu Oct 12 14:31:13 2023 +0300
+
+    Alphabetized
+
+[33mcommit d3c3a8f8226391c955002d70d20dc84201ac1d43[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Wed Oct 11 18:08:27 2023 +0300
+
+    Replace With Alphabet Position
+
+[33mcommit 8e32782bc5a156f00c3a4e48bf4f93036ab0ea70[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Wed Oct 11 17:34:24 2023 +0300
+
+    Sort by programming language
+
+[33mcommit fbad7a2d405871a4ad5d61b226e88ece3782fe65[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Wed Oct 11 14:40:18 2023 +0300
+
+    Ask for missing details
+
+[33mcommit f3b7af8a2447e206ca2f44feb932a37e1bffebaa[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Tue Oct 10 16:05:16 2023 +0300
+
+    Find the odd names
+
+[33mcommit b664c6d40c34c27120026504481a727cd58cf6ed[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Tue Oct 10 12:25:12 2023 +0300
+
+    Order the food
+
+[33mcommit 9d178d745f542348bffdffe92ccf66c2699e6423[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Tue Oct 10 12:06:10 2023 +0300
+
+    Is the meetup language-diverse
+
+[33mcommit f7fefef9fc3fc8cfaf5cccaaff2c59c10bf23fcc[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Sat Oct 7 15:04:16 2023 +0300
+
+    Find GitHub admins
+
+[33mcommit 401d1082267ae27831b64fd1f9246e95866035d8[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Fri Oct 6 19:00:47 2023 +0300
+
+    Find the average age
+
+[33mcommit b292721f668a5bb31eba790cb0d7f40de956fe19[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Fri Oct 6 18:41:47 2023 +0300
+
+    Create usernames
+
+[33mcommit b50e4cd4e8231b90ec6429e214bc0b277973e585[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Fri Oct 6 17:21:30 2023 +0300
+
+    Is the meetup age-diverse?
+
+[33mcommit 6489d254577a087d6591298abf4d451c624d9060[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Wed Oct 4 17:43:34 2023 +0300
+
+    Will all continents be represented
+
+[33mcommit e905b6ab10605966870965ee62473988d35cd2e5[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Tue Oct 3 11:47:15 2023 +0300
+
+    Find the most senior developer
+
+[33mcommit 756b6099c72285728731dc4f34d73a58292de0c7[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Tue Oct 3 10:51:05 2023 +0300
+
+    Can they code in the same language
+
+[33mcommit 8875e6ae5806f6b7c6032092b5390a0f4d86a5b6[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Mon Oct 2 18:37:40 2023 +0300
+
+    Prepare the count of languages
+
+[33mcommit 23f93144e20a45eb1007e55634e55dc56b64f014[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Mon Oct 2 17:19:18 2023 +0300
+
+    Find the first Python developer
+
+[33mcommit c2b4bbd16034b4285785b56838c4f2ff55389747[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Mon Oct 2 17:16:36 2023 +0300
+
+    Higher-Order Functions Series - Is Ruby coming
+
+[33mcommit 4ef95d041c1ab98b12aa6b0c5999abd61c0260ed[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Sun Oct 1 15:36:53 2023 +0300
+
+    Fixed: Higher-Order Functions Series - Greet developers
+
+[33mcommit 2ca282229e04d17dd2a545949df96c822f6f903a[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Thu Sep 28 13:09:41 2023 +0300
+
+    Higher-Order Functions Series - Greet developers
+
+[33mcommit 007e5254ec0f41f893fb85a8f6ea061278eee6ad[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Tue Sep 26 15:55:25 2023 +0300
+
+    Count the number of JavaScript developers coming from Europe
+
+[33mcommit 2f31a1a0c18786b784a4349105475ce3cd9a3afd[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Tue Sep 26 15:08:52 2023 +0300
+
+    Coding Meetup #15 - Higher-Order Functions Series - Find the odd names
+
+[33mcommit 74c31cfa16ed27b7c0c17a234fee021e8148d2e3[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Mon Sep 25 17:05:36 2023 +0300
+
+    Find the odd int
+
+[33mcommit 5ce2dcb0848e6aec5a079e3fa510f87bf08fe8d8[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Mon Sep 25 12:04:17 2023 +0300
+
+    Fixed Non-even substrings
+
+[33mcommit 660264cda6f3e00dcb8f8bf1518c94a6681dea96[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Mon Sep 25 11:50:52 2023 +0300
+
+    Non-even substrings
+
+[33mcommit 9f176991543700ae1697957f4126b7c03c2dafe1[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Thu Sep 21 17:02:43 2023 +0300
+
+    Longest vowel chain
+
+[33mcommit 50e8a76f6f25dda470c9680a6529a5174c105ec4[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Thu Sep 21 16:44:31 2023 +0300
+
+    Delete occurrences of an element if it occurs more than n times
+
+[33mcommit 1271543461b5f151bed1bf478dcc88b0430813e9[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Wed Sep 20 19:34:30 2023 +0300
+
+    Every archer has its arrows
+
+[33mcommit e72a5765c86ebb1f29df9da2dec6ddbac5933a8c[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Wed Sep 20 19:02:16 2023 +0300
+
+    I love big nums and I cannot lie
+
+[33mcommit 7c37239563d7ff1e9300f16f1b24b2ee893de17c[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Tue Sep 19 12:07:53 2023 +0300
+
+    String ends with
+
+[33mcommit 125eed0c4b02949c5d5f87429ce4b6bb06c33338[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Mon Sep 18 20:43:20 2023 +0300
+
+    Two to One
+
+[33mcommit 6b12b856775a351befc290593f14dce02de3d7ff[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Mon Sep 18 18:42:45 2023 +0300
+
+    Friend or Foe?
+
+[33mcommit 7ffc4833151b56dd169648a17bfb73f782fbe872[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Sat Sep 16 22:39:15 2023 +0300
+
+    Sum of odd numbers
+
+[33mcommit bd58b5c806b9cc497d04a6042e5d92a0f27b3072[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Sat Sep 16 19:53:12 2023 +0300
+
+    Numbers in strings
+
+[33mcommit 3da0387874427ffe9944b5ad28ecdcaa765d1314[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Sat Sep 16 19:12:53 2023 +0300
+
+    String repeat
+
+[33mcommit 9fe24a9d5051f2f03d8d7b24e16ca64c2422522a[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Sat Sep 16 19:09:43 2023 +0300
+
+    ATM
+
+[33mcommit 479bbb5a22f4a19e693a73793fe71e7e3e179473[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Thu Sep 14 18:26:31 2023 +0300
+
+    Character Concatenation
+
+[33mcommit a0c18fc82de4e89b812e7f1c1326f927f38a4cd3[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Thu Sep 14 13:51:44 2023 +0300
+
+    Get the Middle Character
+
+[33mcommit 1324aa84c85f48bcf1953b207aff2171eedb88ff[m
+Author: Oksana Ivashchenko <studoks08@gmail.com>
+Date:   Thu Sep 14 13:00:1
