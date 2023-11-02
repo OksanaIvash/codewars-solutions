@@ -1787,3 +1787,41 @@ function padIt(str, n) {
 }
 
 console.log(padIt("a", 2));
+
+// 64. https://www.codewars.com/kata/5609fd5b44e602b2ff00003a/javascript
+
+// Функція, яка обробляє два масиви
+function process2Arrays(arr1, arr2) {
+  // Створюємо множини з масивів
+  const setArr1 = new Set(arr1);
+  const setArr2 = new Set(arr2);
+
+  // Знаходимо спільні елементи
+  const presentInArrays = new Set(
+      [...setArr1].filter((item) => setArr2.has(item)),
+  );
+
+  // Знаходимо унікальні елементи в кожному масиві
+  const uniqueValueArr1 = new Set(
+      [...setArr1].filter((item) => !presentInArrays.has(item)),
+  );
+  const uniqueValueArr2 = new Set(
+      [...setArr2].filter((item) => !presentInArrays.has(item)),
+  );
+
+  // Знаходимо елементи, які присутні в обох масивах
+  const presentInBothArrays = new Set([...uniqueValueArr1, ...uniqueValueArr2]);
+
+  return [
+    presentInArrays.size,
+    presentInBothArrays.size,
+    uniqueValueArr1.size,
+    uniqueValueArr2.size,
+  ];
+}
+
+const arr1 = [
+  33, 2, 3, 37, 38, 40, 12, 10, 43, 44, 47, 49, 8, 19, 22, 24, 26, 28, 29, 30,
+];
+const arr2 = [1, 34, 17, 7, 9, 10, 43, 49, 22, 27, 28];
+console.log(process2Arrays(arr1, arr2)); // [5, 21, 15, 6]
