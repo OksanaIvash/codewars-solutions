@@ -1825,3 +1825,91 @@ const arr1 = [
 ];
 const arr2 = [1, 34, 17, 7, 9, 10, 43, 49, 22, 27, 28];
 console.log(process2Arrays(arr1, arr2)); // [5, 21, 15, 6]
+
+//65. https://www.codewars.com/kata/571d2e9eeed4a150d30011e7/javascript
+
+function scoreboard(participants) {
+  const scoreboard = participants.map((participant) => {
+    const { name, chickenwings, hamburgers, hotdogs } = participant;
+    const score =
+      chickenwings * points.forOneChickenwing +
+      hamburgers * points.forOneHamburger +
+      hotdogs * points.forOneHotdog;
+    return { name, score };
+  });
+
+  return sortByScore(scoreboard);
+}
+
+function sortByScore(list) {
+  return list.sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
+}
+
+const points = {
+  forOneChickenwing: 5,
+  forOneHamburger: 3,
+  forOneHotdog: 2,
+};
+
+const whoAteWhat = [
+  { name: 'Billy The Beast', chickenwings: 17, hamburgers: 7, hotdogs: 8 },
+  { name: 'Habanero Hillary', chickenwings: 5, hamburgers: 17, hotdogs: 11 },
+  { name: 'Joey Jaws', chickenwings: 8, hamburgers: 8, hotdogs: 15 },
+  { name: 'Big Bob', chickenwings: 20, hamburgers: 4, hotdogs: 11 },
+];
+
+console.log(scoreboard(whoAteWhat));
+
+//---------------------version2----------------
+// function scoreboard(participants, scoringPoints) {
+//   return participants
+//     .map(({ name, chickenwings, hamburgers, hotdogs }) => ({
+//       name,
+//       score:
+//         chickenwings * scoringPoints.forOneChickenwing +
+//         hamburgers * scoringPoints.forOneHamburger +
+//         hotdogs * scoringPoints.forOneHotdog,
+//     }))
+//     .sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
+// }
+// console.log(scoreboard(whoAteWhat, points));
+//(щоб забезпечити більшу гнучкість, можна розглянути можливість
+//передачі цих балів як аргумент у функцію scoreboard)
+
+//---------------------version3----------------
+//(Якщо кількість страв може змінюватися!)
+function calculateScore(participants, scoringPoints) {
+  return participants.map((participant) => {
+    const score = Object.keys(participant)
+      .filter((key) => key !== 'name' && scoringPoints[key])
+      .reduce((total, key) => total + participant[key] * scoringPoints[key], 0);
+
+    return { name: participant.name, score };
+  });
+}
+
+function sortByScore1(participants) {
+  return participants.sort(
+    (a, b) => b.score - a.score || a.name.localeCompare(b.name),
+  );
+}
+
+const points1 = {
+  chickenwings: 5,
+  hamburgers: 3,
+  hotdogs: 2,
+  // Додаткові страви та їх бали можна додати тут
+};
+
+const whoAteWhat1 = [
+  { name: "Billy The Beast", chickenwings: 17, hamburgers: 7, hotdogs: 8 },
+  { name: "Habanero Hillary", chickenwings: 5, hamburgers: 17, hotdogs: 11 },
+  { name: "Joey Jaws", chickenwings: 8, hamburgers: 8, hotdogs: 15 },
+  { name: "Big Bob", chickenwings: 20, hamburgers: 4, hotdogs: 11 }
+  // Можна додати нових учасників із різними стравами тут
+];
+
+const scoredParticipants = calculateScore(whoAteWhat1, points1);
+const sortedParticipants = sortByScore1(scoredParticipants);
+
+console.log(sortedParticipants);
