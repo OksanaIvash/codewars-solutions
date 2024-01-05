@@ -1949,3 +1949,55 @@ console.log(numbers.average()); // 3
 console.log(numbers.sum()); // 15
 console.log(numbers.even()); // [2, 4]
 console.log(numbers.odd()); // [1, 3, 5]
+
+// 67. https://www.codewars.com/kata/5783ef69202c0ee4cb000265/javascript
+
+// Функція для пошуку масиву в двовимірному масиві
+function searchArray(arrayToSearch, query) {
+  // Перевірка валідності вхідних даних
+  arrayCheck(arrayToSearch, query);
+
+  for (let i = 0; i < arrayToSearch.length; i++) {
+    if (arraysEqual(arrayToSearch[i], query)) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+// Функція для перевірки коректності вхідних даних
+function arrayCheck(arrayToSearch, query) {
+  if (
+    !Array.isArray(query) ||
+    query.length !== 2 ||
+    !Array.isArray(arrayToSearch) ||
+    !arrayToSearch.every(
+      (subArray) => Array.isArray(subArray) && subArray.length === 2,
+    )
+  ) {
+    throw new Error('Помилка: невірний формат вхідних даних');
+  }
+}
+
+// Функція для порівняння двох масивів на рівність
+function arraysEqual(a, b) {
+  if (a.length !== b.length) return false;
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) return false;
+  }
+  return true;
+}
+
+//----version2 function arraysEqual----------------
+// function arraysEqual(a, b) {
+//   return a.length === b.length && a.every((val, index) => val === b[index]);
+// }
+
+const arrayToSearch = [
+  [1, 2],
+  [3, 4],
+  [5, 6],
+];
+console.log(searchArray(arrayToSearch, [1, 2])); // 0
+console.log(searchArray(arrayToSearch, [5, 6])); // 2
+console.log(searchArray(arrayToSearch, [9, 2])); // -1
