@@ -2001,3 +2001,43 @@ const arrayToSearch = [
 console.log(searchArray(arrayToSearch, [1, 2])); // 0
 console.log(searchArray(arrayToSearch, [5, 6])); // 2
 console.log(searchArray(arrayToSearch, [9, 2])); // -1
+
+// 68. https://www.codewars.com/kata/5905871c00881d0e85000015/javascript
+function calculateJuicePrice(fruitsArr) {
+   // Внутрішня функція для перевірки, чи вхідний масив містить тільки непорожні рядки
+  function validateInput(arr) {
+    if (
+      !Array.isArray(arr) ||
+      arr.length === 0 ||
+      !arr.every((item) => typeof item === 'string' && item.trim() !== '')
+    ) {
+      throw new Error('Помилка: невірний формат вхідних даних');
+    }
+  }
+
+  validateInput(fruitsArr);
+
+  // Встановлення цін для різних категорій фруктів
+  const fruitPrices = new Map([
+    ['banana', 5],
+    ['orange', 5],
+    ['apple', 5],
+    ['lemon', 5],
+    ['grapes', 5],
+    ['avocado', 7],
+    ['strawberry', 7],
+    ['mango', 7],
+  ]);
+  const defaultPrice = 9;
+
+  // Обчислення загальної вартості соку з вибраних фруктів
+  const total = fruitsArr.reduce((sum, fruit) => {
+    const fruitName = fruit.toLowerCase().trim();
+    return sum + (fruitPrices.get(fruitName) || defaultPrice);
+  }, 0);
+
+  return Math.round(total / fruitsArr.length);
+}
+
+const fruitMix = ['Mango', 'Banana', 'Avocado'];
+console.log(calculateJuicePrice(fruitMix)); // Виведе вартість соку
