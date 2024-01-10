@@ -2041,3 +2041,16 @@ function calculateJuicePrice(fruitsArr) {
 
 const fruitMix = ['Mango', 'Banana', 'Avocado'];
 console.log(calculateJuicePrice(fruitMix)); // Виведе вартість соку
+
+// 69. https://www.codewars.com/kata/523f5d21c841566fde000009/javascript
+
+function arrayDiff(list, present) {
+  if (!Array.isArray(list) || !Array.isArray(present)) {
+    throw new Error('Error: Invalid input format');
+  }
+
+  const presentSet = new Set(present);
+  return list.filter(item => !presentSet.has(item));
+}
+
+console.log(arrayDiff([1, 2, 2, 2, 3], [2])); // [1, 3]
