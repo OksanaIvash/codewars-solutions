@@ -2118,3 +2118,83 @@ console.log(`Концентрація яблучного соку: ${newJar.getC
 
 newJar.pourOut(200);
 console.log(`Концентрація яблучного соку після виливання: ${newJar.getConcentration('apple')}`); // Після виливання
+
+/*Задача "Банківський рахунок"
+
+У цій задачі вам потрібно реалізувати просту модель банківського рахунку.
+Реалізуйте клас BankAccount, який дозволить виконувати наступні дії:
+Створення рахунку:
+Коли створюється новий об'єкт BankAccount, він має мати початковий баланс, який дорівнює нулю.
+Депозит (внесення коштів):
+Метод deposit(amount) дозволяє додати певну суму грошей на рахунок.
+Сума депозиту має бути позитивним числом. Якщо сума не відповідає цій вимозі, повинно виводитися повідомлення про помилку.
+Зняття коштів:
+Метод withdraw(amount) дозволяє зняти певну суму грошей з рахунку.
+Якщо на рахунку недостатньо коштів або введена сума є негативною, повинно виводитися повідомлення про помилку.
+Перегляд балансу: Метод getBalance() повертає поточний баланс рахунку.
+Історія транзакцій:
+Клас також повинен зберігати історію всіх успішних транзакцій депозиту та зняття коштів.
+Кожна транзакція повинна містити інформацію про тип операції ('deposit' або 'withdraw'), суму та час проведення транзакції.*/
+
+
+class BankAccount {
+  constructor() {
+    this.totalBalance = 0;
+    this.transactions = [];
+  }
+
+  deposit(amount) {
+    if (typeof amount !== 'number') {
+      throw new Error('Введіть число');
+    }
+
+    if (amount < 0) {
+      throw new Error('Сума депозиту має бути більшою за 0');
+    }
+
+    this.totalBalance += amount;
+    const transactionDate = new Date().toLocaleString();
+    this.transactions.push({
+      type: 'deposit',
+      amount: amount,
+      date: transactionDate,
+    });
+  }
+
+  withdraw(amount) {
+    if (typeof amount !== 'number') {
+      throw new Error('Введіть число');
+    }
+
+    if (amount < 0) {
+      throw new Error('Сума зняття має бути більшою за 0');
+    }
+
+    if (amount > this.totalBalance) {
+      throw new Error('Недостатньо коштів на рахунку');
+    }
+
+    this.totalBalance -= amount;
+    const transactionDate = new Date().toLocaleString();
+    this.transactions.push({
+      type: 'withdraw',
+      amount: amount,
+      date: transactionDate,
+    });
+  }
+
+  getBalance() {
+    return this.totalBalance;
+  }
+
+  getTransactionHistory() {
+    return this.transactions;
+  }
+}
+
+const newAccount = new BankAccount();
+newAccount.deposit(100);
+newAccount.withdraw(50);
+console.log(newAccount);
+console.log(newAccount.getBalance());
+console.log(newAccount.getTransactionHistory());
