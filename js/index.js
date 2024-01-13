@@ -2054,3 +2054,67 @@ function arrayDiff(list, present) {
 }
 
 console.log(arrayDiff([1, 2, 2, 2, 3], [2])); // [1, 3]
+
+class Jar {
+  constructor() {
+    this.totalVolume = 0; // Ініціалізація загального об'єму соку в склянці
+    this.contents = new Map(); // Ініціалізація карти для зберігання об'єму кожного типу соку
+  }
+
+  add(amount, type) {
+    // Перевірка валідності вхідних даних
+    if (amount <= 0) {
+      throw new Error('Кількість соку для додавання має бути більше нуля');
+    }
+
+    if (typeof type !== 'string' || type.trim() === '') {
+      throw new Error('Тип соку має бути непорожнім рядком');
+    }
+
+    this.totalVolume += amount; // Додавання соку до загального об'єму
+
+    // Оновлення об'єму конкретного типу соку
+    const currentAmount = this.contents.get(type) || 0;
+    this.contents.set(type, currentAmount + amount);
+  }
+
+  pourOut(amount) {
+    // Перевірка валідності кількості соку для виливання
+    if (amount <= 0) {
+      throw new Error('Кількість соку для виливання має бути більше нуля');
+    }
+    if (amount > this.totalVolume) {
+      throw new Error('Неможливо вилити більше соку, ніж є в склянці');
+    }
+
+    // Обчислення відсотка соку, який буде вилитий
+    const pourOutPercentage = amount / this.totalVolume;
+    this.totalVolume -= amount; // Виливання соку зі загального об'єму
+
+    // Пропорційне зменшення об'єму кожного типу соку
+    this.contents.forEach((volume, type) => {
+      this.contents.set(type, volume * (1 - pourOutPercentage));
+    });
+  }
+
+  getTotalAmount() {
+    // Повернення загального об'єму соку в склянці
+    return this.totalVolume;
+  }
+
+  getConcentration(type) {
+    // Повернення концентрації конкретного типу соку
+    if (this.totalVolume === 0 || !this.contents.has(type)) {
+      return 0;
+    }
+    return this.contents.get(type) / this.totalVolume;
+  }
+}
+
+const newJar = new Jar();
+newJar.add(200, 'apple');
+newJar.add(200, 'banana');
+console.log(`Концентрація яблучного соку: ${newJar.getConcentration('apple')}`); // Перед виливанням
+
+newJar.pourOut(200);
+console.log(`Концентрація яблучного соку після виливання: ${newJar.getConcentration('apple')}`); // Після виливання
