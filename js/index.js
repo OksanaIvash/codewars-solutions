@@ -2198,3 +2198,109 @@ newAccount.withdraw(50);
 console.log(newAccount);
 console.log(newAccount.getBalance());
 console.log(newAccount.getTransactionHistory());
+
+/*Задача "Керування складом"
+
+У цій задачі вам потрібно реалізувати систему керування інвентарем для складу.
+Ви створите клас InventoryManager, який дозволить виконувати наступні дії:
+Додавання товарів: Метод addItem(itemName, quantity) дозволяє додати певну
+кількість товару на склад.
+Товар представляється назвою (рядком) та кількістю (числом).
+Якщо товар вже існує на складі, його кількість має бути оновлена.
+Видалення товарів: Метод removeItem(itemName, quantity) дозволяє зменшити
+кількість певного товару на складі.
+Якщо після видалення кількість товару стає нульовою або меншою, товар повністю
+видаляється зі складу.
+Перегляд інвентарю: Метод getInventory() повинен повертати поточний список усіх
+товарів та їх кількостей на складі.
+Пошук товарів: Метод findItem(itemName) дозволяє перевірити, чи є певний товар
+на складі, та якщо є, то в якій кількості.
+Зберігання історії транзакцій: Клас також повинен зберігати історію всіх додавань
+та видалень товарів. Кожна транзакція має містити інформацію про тип операції
+('addItem' або 'removeItem'), назву товару, кількість та час проведення транзакції.*/
+
+class InventoryManager {
+  constructor() {
+    this.listOfGoodsInStock = new Map();
+    this.transactions = [];
+  }
+
+  // Перевірка назви товару
+  validateItemName(itemName) {
+    if (typeof itemName !== 'string' || itemName.trim() === '') {
+      throw new Error('Назва товару має бути рядком і не може бути порожньою');
+    }
+  }
+
+  // Перевірка кількості товару
+  validateQuantity(quantity) {
+    if (typeof quantity !== 'number' || quantity < 0) {
+      throw new Error('Кількість має бути числом та не може бути меншою за 0');
+    }
+  }
+
+  addItem(itemName, quantity) {
+    this.validateItemName(itemName);
+    this.validateQuantity(quantity);
+
+    const currentQuantity = this.listOfGoodsInStock.get(itemName) || 0;
+    this.listOfGoodsInStock.set(itemName, currentQuantity + quantity);
+
+    this.transactions.push({
+      type: 'addItem',
+      itemName,
+      quantity,
+      date: new Date().toLocaleString(),
+    });
+  }
+
+  removeItem(itemName, quantity) {
+    this.validateItemName(itemName);
+    this.validateQuantity(quantity);
+
+    if (!this.listOfGoodsInStock.has(itemName)) {
+      throw new Error('Товар не знайдено');
+    }
+
+    const availableQuantity = this.listOfGoodsInStock.get(itemName);
+    if (quantity > availableQuantity) {
+      throw new Error(`Недостатньо коштів на рахунку. В наявності: ${availableQuantity} одиниць товару`);
+    }
+
+    const newQuantity = availableQuantity - quantity;
+    if (newQuantity > 0) {
+      this.listOfGoodsInStock.set(itemName, newQuantity);
+    } else {
+      this.listOfGoodsInStock.delete(itemName);
+    }
+
+    this.transactions.push({
+      type: 'removeItem',
+      itemName,
+      quantity,
+      date: new Date().toLocaleString(),
+    });
+  }
+
+  getInventory() {
+    return Array.from(this.listOfGoodsInStock.entries());
+  }
+
+  findItem(itemName) {
+    this.validateItemName(itemName);
+    return this.listOfGoodsInStock.has(itemName)
+      ? `Товар знайдено. Загальна кількість: ${this.listOfGoodsInStock.get(itemName)}`
+      : 'Товар не знайдено';
+  }
+}
+
+const inventoryManager = new InventoryManager();
+inventoryManager.addItem('apple', 10);
+inventoryManager.addItem('pear', 15);
+
+
+console.log(inventoryManager);
+console.log(inventoryManager.getInventory());
+console.log(inventoryManager.findItem('apple'));
+console.log(inventoryManager.findItem('pear'));
+inventoryManager.removeItem('apple', 20);
