@@ -2297,10 +2297,9 @@ class InventoryManager {
 const inventoryManager = new InventoryManager();
 inventoryManager.addItem('apple', 10);
 inventoryManager.addItem('pear', 15);
-
+// inventoryManager.removeItem('apple', 20);
 
 console.log(inventoryManager);
 console.log(inventoryManager.getInventory());
 console.log(inventoryManager.findItem('apple'));
 console.log(inventoryManager.findItem('pear'));
-inventoryManager.removeItem('apple', 20);
